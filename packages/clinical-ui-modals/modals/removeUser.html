@@ -1,0 +1,23 @@
+<!-- set up the modal to start hidden and fade in and out -->
+<template name="removeUserModal">
+  <div id="removeUserModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="removeUserModalTitle">Remove User</h4>
+        </div>
+        <div class="modal-body">
+          <p id="removeUserModalMessage">
+            Please type the username of the acount you want to remove.</p>
+          <input id="removeUserModalInput" type="text" class="form-control" value="">
+        </div>
+        <!-- dialog buttons -->
+        <div class="modal-footer">
+          <button id="confirmRemoveUserButton" type="button" class="btn btn-danger" data-dismiss="modal">Remove</button>
+          <button id="cancelRemoveUserButton" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

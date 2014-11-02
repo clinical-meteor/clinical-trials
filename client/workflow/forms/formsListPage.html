@@ -1,0 +1,57 @@
+<template name="formsListPage">
+  <div id="formsListPage" class="page">
+    <div class="container">
+
+        <div class="row">
+          <div class="col col-md-6">
+            <input id="formSearchInput" type="text" class="form-control" placeholder="search saved forms..." />
+          </div>
+        </div>
+      <hr/>
+
+      <table id="formsTable" class="table table-hover table-striped tablesorter">
+        <thead>
+          <tr>
+            <th id="formsTableStarredColumn">Starred</th>
+            <!-- <th id="formsTableFormIdColumn">Form ID</th> -->
+            <th id="formsTableFormNameColumn">Form Name</th>
+            <th id="formsTableOwnerColumn">Owner</th>
+            <th id="formsTableNumBlocksColumn"># Blocks</th>
+            <th id="formsTableCreatedAtColumn">Created</th>
+            <th id="formsTableActiveColumn">Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each formsList}}
+            {{> formRowItem }}
+          {{/each}}
+        </tbody>
+      </table>
+      <hr>
+
+      <div class="btn-group">
+        {{#each formsPaginationButtonList }}
+          {{> formsPaginationButton }}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<template name="formsPaginationButton">
+  <button id="pagination-btn-{{index}}" class="{{pageActive}} pagination-btn btn btn-default">{{getPage}}</button>
+</template>
+
+
+<template name="formRowItem">
+  <tr class="individualFormRow">
+    <td><i class="fa {{ getStar }}"></i></td>
+    <!-- <td>{{ _id }}</td> -->
+    <td>{{ formName }}</td>
+    <td>{{ ownerUsername }}</td>
+    <td>{{ numBlocks }}</td>
+    <td>{{ getCreatedAt }}</td>
+    <td>{{ active }}</td>
+  </tr>
+</template>

@@ -1,0 +1,45 @@
+<template name="commentsListPage">
+  <div id="commentsListPage" class="page">
+    <div class="container">
+
+        <div class="row">
+          <div class="col col-md-6">
+            <input id="subjectSearchInput" type="text" class="form-control" placeholder="search subjects..." />
+          </div>
+          <div class="col-md-6 pull-right">
+            <button id="createCommentButton" class="btn btn-info">Create Comment</button>
+          </div>
+        </div>
+      <hr/>
+
+      <table id="tableOfStudyForms" class="table table-hover table-striped tablesorter">
+        <thead>
+          <tr>
+            <!-- <th>Comment ID</th> -->
+            <th>Question</th>
+            <th>Owner</th>
+            <th>Created</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each commentsList}}
+            {{> commentRowItem }}
+          {{/each}}
+        </tbody>
+      </table>
+      <hr>
+    </div>
+  </div>
+</template>
+
+
+<template name="commentRowItem">
+  <tr class="individualFormRow">
+    <!-- <td>{{ _id }}</td> -->
+    <td>{{ question_id }}</td>
+    <td>{{ owner }}</td>
+    <td>{{ getCreatedAt }}</td>
+    <td>{{ text }}</td>
+  </tr>
+</template>

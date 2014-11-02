@@ -1,0 +1,44 @@
+<template name="userEditPage">
+  <div id="userEditPage" class="page">
+
+    {{#with user}}
+      <div class="content">
+        <div id="pad-wrapper" class="settings-wrapper">
+          <div class="row">
+
+            <div class="col-md-3 col-md-offset-1 avatar-box">
+              <div class="centered personal-image">
+                <img id="userAvatarImage" src="{{ getAvatar }}" class="avatar img-circle" alt="avatar" />
+              </div>
+              <div id="selectCardTabs" class="clickable list-group">
+                <div id="showBasicInfoCard" class="list-group-item">
+                  Basic Info
+                </div>
+                <div id="showSecurityCard" class="list-group-item">
+                  Security
+                </div>
+                <div id="showPreferencesCard" class="list-group-item">
+                  Preferences
+                </div>
+              </div>
+
+              <br>
+            </div>
+
+            <div class="col-md-7 personal-info">
+              {{> userBasicInfoCard}}
+              {{> userSecurityCard}}
+              {{> userPreferencesCard}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/with}}
+  </div>
+</template>
+
+<!-- <template name="dirtyUserSave">
+  <div class="actions">
+    <input id="submitProfileInfoButton" type="button" class="fullwidth btn btn-success {{isDirtyRecord}} primary" value="{{createOrSaveText}}">
+  </div>
+</template> -->

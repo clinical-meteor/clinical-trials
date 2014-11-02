@@ -1,0 +1,76 @@
+<template name="sponsorsListPage">
+  <div id="sponsorsListPage" class="page">
+    <div class="container">
+
+        <div class="row ">
+          <div class="col-md-6">
+            <input id="sponsorSearchInput" type="text" class="form-control" placeholder="search sponsors..." />
+          </div>
+          <div class="col-md-6 pull-right">
+            <button id="createSponsorButton" class="btn btn-info">Create Sponsor</button>
+          </div>
+        </div>
+      <hr/>
+
+      <table id="sponsorsTable" class="table table-hover table-striped tablesorter">
+        <thead>
+        <tr>
+          <th>
+            <span class="line"></span>ObjectId
+          </th>
+          <th>
+            <span class="line"></span>Brand Name
+          </th>
+          <th>
+            <span class="line"></span>Description
+          </th>
+          <th>
+            <span class="line"></span>Owner
+          </th>
+          <th>
+            <span class="line"></span>Created At
+          </th>
+          <th>
+            <span class="line"></span>URL
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {{#each sponsorsList}}
+        {{> sponsorListItem }}
+        {{/each}}
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</template>
+
+
+
+
+<template name="sponsorListItem">
+  <tr class="sponsorListItem">
+    <td>
+      {{_id}}
+<!--       <i class="fa fa-book"></i> -->
+    </td>
+    <td>
+      {{ name }}
+    </td>
+    <td>
+      {{ description }}
+    </td>
+    <td>
+      {{ owner }}
+    </td>
+    <td>
+      {{ getCreatedAt }}
+    </td>
+    <td>
+      {{ url }}
+    </td>
+  </tr>
+</template>

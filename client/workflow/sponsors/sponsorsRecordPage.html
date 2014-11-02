@@ -1,0 +1,93 @@
+<template name="sponsorsRecordPage">
+  <div id="sponsorsRecordPage" class="page">
+    <div class="hidden">{{resized}}</div>
+
+    <div class="container">
+      {{#with sponsorRecord }}
+      <div id="pad-wrapper">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="pull-left">
+              {{ getSponsorName }}
+            </h2>
+
+<!--             {{#if isAdmin}}
+            <div class="btn-group pull-right">
+              <button id="selectAsEmployerButton" class="medium btn btn-success">Select Employer</button>
+              <button id="editSponsorButton" class="medium btn btn-warning">Edit Sponsor</button>
+              <button id="deleteSponsorButton" class="medium btn btn-danger">Delete</button>
+            </div>
+            {{else}}
+            <button id="selectAsEmployerButton" class="medium btn btn-success">Select Employer</button>
+            <button id="editSponsorButton" class="medium btn btn-warning">Edit</button>
+            {{/if}} -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Sponsor Id:  {{ _id }}</h4>
+          </div>
+        </div>
+        <hr>
+
+        <div class="row">
+
+          <div class="col col-md-12">
+            <div class="col col-md-6">
+              <div class="field-box">
+                <label for="sponsorNameInput" class="control-label">Name</label>
+                <input id="sponsorNameInput" type="text" class="form-control inline-input" placeholder="..." value="{{name}}" readonly>
+              </div>
+
+              <div class="field-box">
+                <label for="sponsorDescriptionInput" class="control-label">Description</label>
+                <input id="sponsorDescriptionInput" type="text" class="form-control inline-input" placeholder="..." value="{{description}}" readonly>
+              </div>
+
+              <div class="field-box">
+                <label for="sponsorUrlInput" class="control-label">Url</label>
+                <input id="sponsorUrlInput" type="text" class="form-control inline-input" placeholder="..." value="{{url}}" readonly>
+              </div>
+
+            </div>
+            <div class="col col-md-6">
+
+              <div class="left-column col col-md-6 field-box">
+                <label for="sponsorOwnerInput" >Owner</label>
+                <input id="sponsorOwnerInput" type="text" class="form-control" placeholder="..." value="{{ owner }}" readonly>
+              </div>
+              <div class="right-column col col-md-6 field-box">
+                <label for="sponsorOwnerIdInput" >Owner ID</label>
+                <input id="sponsorOwnerIdInput" type="text" class="form-control" placeholder="..." value="{{ owner_id }}" readonly>
+              </div>
+
+
+              <div class="left-column col col-md-6 field-box">
+                <label for="sponsorCreatorInput" >Creator</label>
+                <input id="sponsorCreatorInput" type="text" class="form-control" placeholder="..." value="{{ creator }}" readonly>
+              </div>
+              <div class="right-column col col-md-6 field-box">
+                <label for="sponsorCreatorIdInput" >Creator ID</label>
+                <input id="sponsorCreatorIdInput" type="text" class="form-control" placeholder="..." value="{{ creator_id }}" readonly>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <hr>
+
+        <div class="col col-md-12">
+          <div class="row">
+            <h4>Studies</h4>
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+      {{/with}}
+    </div>
+  </div>
+</template>

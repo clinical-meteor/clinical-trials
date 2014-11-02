@@ -1,0 +1,92 @@
+<template name="myProfilePage">
+  <div id="myProfilePage" class="page">
+
+    {{#with user}}
+      <div class="content">
+        <div id="pad-wrapper" class="settings-wrapper">
+
+
+          <div class="row">
+            <div class="col-md-3 col-md-offset-1 avatar-box">
+              <div class="centered personal-image">
+                <img id="profileAvatar" src="{{ getAvatar }}" class="avatar img-circle" alt="avatar" />
+              </div>
+              <br>
+            </div>
+
+            <div class="col-md-7 personal-info">
+              <div class="row">
+                <div class="col-md-8">
+                  <h3 id="profileUserName" class="name">{{ username }}</h3>
+                  <span id="profileUserIdLabel" class="area">User ID:</span><span id="profileUserId">{{_id}}</span><br>
+                </div>
+                <div class="col-md-4">
+                  <!-- <a id="editProfileButton" class="btn btn-info pull-right edit">
+                    Edit Profile
+                  </a> -->
+                  {{#if isAdmin}}
+                    <div class="btn-group pull-right">
+                      <button id="editProfileButton" class="medium btn btn-warning">Edit Profile</button>
+                      <button id="deleteProfileButton" class="medium btn btn-danger">Delete</button>
+                    </div>
+                  {{else}}
+                    <button id="editProfileButton" class="medium btn btn-warning">Edit</button>
+                  {{/if}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-9">
+
+                    <div class="col-md-12">
+
+                      <label id="profileUsernameLabel">Username</label>
+                      <p id="profileUsername">{{username}}</p>
+                      <br>
+
+                      <!-- <label id="profileUserIdLabel">User ID</label>
+                      <p id="profileUserId">{{_id}}</p>
+                      <br> -->
+
+                      <label id="profileFullNameLabel">Full Name</label>
+                      <p id="profileFullName">{{ profile.name }}</p>
+                      <br>
+
+                      <label id="profileUserRoleLabel">Roles</label>
+                      <p id="profileUserRole">{{ profile.roles }}</p>
+                      <br>
+
+                      <label id="profileUsernameLabel">Username</label>
+                      <p id="profileUsername">{{ username}}</p>
+                      <br>
+
+
+                      <label id="profileSponsorLabel">Sponsor</label>
+                      <p id="profileSponsor">{{ profile.sponsor }}</p>
+                      <br>
+
+                      <label id="profileSponsorIdLabel">Sponsor ID</label>
+                      <p id="profileSponsorId">{{ profile.sponsor_id}}</p>
+                      <br>
+
+                      <label id="profileBiographyLabel">Biography</label>
+                      <p id="profileBiography">{{profile.biography}}</p>
+                      <br>
+
+
+
+
+
+                    </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    {{/with}}
+  </div>
+</template>

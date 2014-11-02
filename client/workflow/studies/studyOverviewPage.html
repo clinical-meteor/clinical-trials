@@ -1,0 +1,90 @@
+<template name="studyOverviewPage">
+  <div id="studyOverviewPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div class="container">
+
+      <div class="row">
+        <div class="col col-md-12">
+
+          <!-- <div class="panel tile"> -->
+          <div class="panel tile">
+            <div class="panel-heading heading-primary">
+              {{name}}
+              <div class="pull-right">
+                {{_id}}
+              </div>
+            </div>
+            <div class="panel-body">
+              {{#if userHasBeenSelected}}
+                {{#if visitHasBeenChosen}}
+                  <ul class="nav nav-tabs" role="tablist">
+                    {{#each formsList}}
+                      <li class="tab"><a role="tab" data-toggle="tab">{{formName}}</a></li>
+                    {{/each}}
+                  </ul>
+                  <br>
+                  {{#each formSchema}}
+                    {{> formBlockPreview }}
+                  {{/each}}
+                {{else}}
+                  <div class="row">
+                    <div class="col col-md-6 col-md-offset-3">
+                      <h2 class="fullwidth centered">Casebook</h2>
+                      <ul id="casebookList" class="list-group">
+                        {{#each visitsList}}
+                          <a class="list-group-item studyVisit" tabindex="{{getTabIndex}}">
+                            <h4 class="list-group-item-heading">{{ getVisitLabel }}</h4>
+                            <h6>{{_id}}</h6>
+                          </a>
+                        {{/each}}
+                        <a class="list-group-item studyVisit" tabindex="{{getTabIndex}}">
+                          <h4 class="list-group-item-heading">Unscheduled Visit</h4>
+                        </a>
+                      </ul>
+                    </div>
+                  </div>
+                {{/if}}
+              {{else}}
+                <div class="row">
+                  <div class="col col-md-6 col-md-offset-3">
+                    <h2 class="fullwidth centered">Select Subject</h2>
+                    <input id="subjectSearchInput" type="text" class="fullwidth form-control" placeholder="Jane Doe">
+                    <br>
+                    <ul id="subjectsResultList" class="list-group">
+                      {{#each resultsList}}
+                        <a class="list-group-item studySubject" tabindex="{{getTabIndex}}">
+                          <h4 class="list-group-item-heading">{{ name }}</h4>
+                          <h6>{{_id}}</h6>
+                        </a>
+                      {{/each}}
+                    </ul>
+                  </div>
+                </div>
+              {{/if}}
+            </div>
+            <div class="panel-footer">
+              <a>Save (Not Implemented Yet)</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- <hr> -->
+
+    </div>
+  </div>
+</template>
+
+
+<!--
+<template name="formRowItem">
+  <tr class="individualFormRow">
+    <td><i class="fa {{ getStar }}"></i></td>
+    <td>{{ _id }}</td>
+    <td>{{ formName }}</td>
+    <td>{{ ownerUsername }}</td>
+    <td>{{ numBlocks }}</td>
+    <td>{{ createdAt }}</td>
+    <td>{{ active }}</td>
+  </tr>
+</template> -->

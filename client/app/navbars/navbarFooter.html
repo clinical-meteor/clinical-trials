@@ -1,0 +1,70 @@
+<template name="navbarFooter">
+  <footer id="navbarFooter">
+    <nav id="navbarFooterNav" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse unselectable" id="bs-example-navbar-collapse-1">
+          {{#if isLoggedIn }}
+            <ul class="nav navbar-nav">
+
+              {{#if buildControls}}
+                <li><a id="clearFormLink"><u>C</u>lear Form</a></li>
+                <li><a id="saveFormLink"><u>S</u>ave Form</a></li>
+              {{/if}}
+
+              {{#if formControls}}
+                {{#if isPublished}}
+                <li><a id="collectDataLink"><u>C</u>ollect Data</a></li>
+                {{/if}}
+              {{/if}}
+
+              {{#if dataControls}}
+                {{#if isApproved}}
+  <!--               <li><a id="nextDataLink"><u>N</u>ext</a></li> -->
+                <li><a id="approveDataLink"><u>R</u>eview</a></li>
+                {{else}}
+                <li><a id="deleteDataLink"><u>D</u>elete</a></li>
+                <li><a id="editDataLink"><u>E</u>dit Data</a></li>
+                <li><a id="approveDataLink"><u>A</u>pprove</a></li>
+                <li><a id="lockDataLink"><u>L</u>ock</a></li>
+                {{/if}}
+              {{/if}}
+
+              {{#if userControls }}
+                <li><a id="saveUserRecordLink" class="strikethrough">Save</a></li>
+                <li><a id="createUserRecordLink" class="strikethrough">Create</a></li>
+                <li><a id="deleteUserRecordLink">Delete</a></li>
+              {{/if}}
+
+              {{#if sponsorControls }}
+                <li><a id="saveSponsorLink" class="strikethrough">Save</a></li>
+                <li><a id="editSponsorLink" class="strikethrough">Edit</a></li>
+                <li><a id="deleteSponsorLink" class="strikethrough">Delete</a></li>
+              {{/if}}
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <!-- {{#if isSavedForms}} -->
+              {{#if formControls}}
+                {{#if isPublished}}
+                <li><a id="publishFormLink"><u>U</u>npublish</a></li>
+                {{else}}
+                <li><a id="publishFormLink"><u>P</u>ublish</a></li>
+                <li><a id="editFormLink"><u>E</u>dit Form</a></li>
+                <li><a id="deleteFormLink"><u>D</u>elete Form</a></li>
+                {{/if}}
+              {{/if}}
+              <!-- {{/if}} -->
+
+              <!-- <li><a id="panelToggleLink"><u>P</u>anel</a></li> -->
+              <li><a id="helpLink"><u>H</u>elp</a></li>
+            </ul>
+            {{else}}
+          {{/if}}
+
+        </div>
+      </div>
+    </nav>
+  </footer>
+</template>

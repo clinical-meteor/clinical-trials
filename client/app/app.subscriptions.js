@@ -1,0 +1,10 @@
+Deps.autorun(function(){
+  Meteor.subscribe('items');
+  Meteor.subscribe('forms');
+  Meteor.subscribe('data');
+  Meteor.subscribe('studies');
+  Meteor.subscribe('sponsors');
+  Meteor.subscribe('subjects');
+  Meteor.subscribe('comments');
+  Meteor.subscribe('usersDirectory');
+});

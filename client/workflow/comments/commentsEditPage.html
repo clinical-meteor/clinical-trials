@@ -1,0 +1,29 @@
+<template name="commentsEditPage">
+  <div id="commentsEditPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-12">
+          <h4>Comments Data</h4>
+          <br>
+        </div>
+        <div class="col col-md-12">
+          <!-- <label for="commentTitleLabel" >Title</label>
+          <input id="commentTitleInput" type="text" class="form-control" placeholder="..." value="{{name}}">
+          <br> -->
+
+          <label for="commentTextLabel" >Text</label>
+          <textarea id="commentTextInput" rows="4" class="form-control">{{description}}</textarea>
+          <br>
+
+        </div>
+      </div>
+      <hr>
+
+      <div id="saveCommentButton" class="pull-right btn btn-info">Save Comments</div>
+      {{#if notNewComment }}
+        <div id="deleteCommentButton" class="pull-right btn btn-danger with-right-margin">Delete Comments</div>
+      {{/if}}
+    </div>
+  </div>
+</template>

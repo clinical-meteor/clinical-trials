@@ -1,0 +1,62 @@
+<!-- ============================================================================== -->
+<!-- just the navigation bar at the top of the application -->
+<!-- http://getbootstrap.com/components/#navbar -->
+
+
+<template name="navbarHeader">
+  <header id="navbarHeader">
+    <nav id="navbarHeaderNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button id="navbarMenuToggler" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a id="navbarBrandLink" class="unselectable navbar-brand" href="/">ClinicalTrials</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul id="westNavbarHeader" class="nav navbar-nav">
+          {{#if isLoggedIn}}
+            <li><a id="selectedSubjectLink" href="#null">{{getSelectedSubject}}</a></li>
+
+            <!-- <li><a id="sponsorsLink" href="/sponsors">Sponsors</a></li>
+            <li><a id="studiesLink" href="/studies">Studies</a></li>
+            <li><a id="newFormLink" href="/builder">Design</a></li>
+            <li><a id="savedFormLink" href="/forms">Forms</a></li>
+            <li><a id="collectedDataLink" href="/data">Data</a></li>
+            <li><a id="usersLink" href="/users">Users</a></li>
+            <li><a id="subjectsLink" href="/subjects">Subjects</a></li>
+            <li><a id="commentsLink" href="/comments">Comments</a></li> -->
+          {{/if}}
+        </ul>
+
+        <ul id="eastNavHeaderMenu" class="nav navbar-nav navbar-right">
+          {{#if isLoggedIn }}
+            <li id="northeastDropDown" class="dropdown">
+              <a id="northeastDropDownLink" href="#" class="dropdown-toggle" data-toggle="dropdown">{{getUserName}}<b class="caret"></b></a>
+              <ul id="northeastDropDownMenu" class="dropdown-menu">
+                <li><a id="userProfileLink" href="/myprofile">My Profile</a></li>
+                <li><a id="termsOfServiceLink" href="/eula">End User License</a></li>
+                <li><a id="privacyPolicyLink" href="/privacy">Privacy Page</a></li>
+                <li><a id="aboutLink" href="/about">About</a></li>
+                <li><a id="glossaryLink" href="/glossary">Glossary</a></li>
+                <li class="divider"></li>
+                <li><a id="signOutLink" href="/sign-out">Sign-Out</a></li>
+              </ul>
+            </li>
+          {{else}}
+            <li><a id="signUpLnk" href="/sign-up">Sign Up</a></li>
+            <li><a id="signInLink" href="/sign-in">Sign In</a></li>
+          {{/if}}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+</template>

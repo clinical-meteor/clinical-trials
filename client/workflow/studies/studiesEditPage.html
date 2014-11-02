@@ -1,0 +1,114 @@
+<template name="studiesEditPage">
+  <div id="studiesEditPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-12">
+          <div class="panel panel-default tile">
+            <div class="panel-heading">
+              <h4>Study Meta Data</h4>
+            </div>
+            <div class="panel-body">
+              <label for="studyNameInput" >Study Name</label>
+              <input id="studyNameInput" type="text" class="form-control" placeholder="..." value="{{name}}">
+              <br>
+
+              <label for="studyDescriptionInput" >Study Description</label>
+              <input id="studyDescriptionInput" type="text" class="form-control" placeholder="..." value="{{description}}">
+              <br>
+    <!--
+              <label for="studyUrlInput" >URL</label>
+              <input id="studyUrlInput" type="text" class="form-control" placeholder="..." value="{{url}}">
+              <br> -->
+
+              <div class="form-group">
+                <label for="findStudySponsorButton" >Select Sponsor</label>
+                <div id="findStudySponsorButton" class="fullwidth btn btn-default">{{ getStudySponsor }}</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- <hr> -->
+
+      {{#if notNewStudy}}
+      <div class="row">
+        <div class="col col-md-12">
+          <div class="panel panel-default tile">
+            <div class="panel-heading">
+              <h4>Forms</h4>
+            </div>
+            <div class="panel-body">
+              <table id="formsTable" class="table {{isDeletingView}} tablesorter">
+                <thead>
+                  <tr>
+                    <th>Stared</th>
+                    <th>Form ID</th>
+                    <th>Form Name</th>
+                    <th>Owner</th>
+                    <th># Blocks</th>
+                    <th>Tags</th>
+                    <th>Active</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each formsList}}
+                    {{> formRowItem }}
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-footer">
+              <div id="addFormToStudyButton" class="btn btn-info">Add Form to Study</div>
+              <div id="deleteFormFromStudyButton" class="btn btn-danger">Delete Form</div>
+            </div>
+          </div>
+
+          <div class="panel panel-default tile">
+            <div class="panel-heading">
+              <h4>Visits</h4>
+            </div>
+            <div class="panel-body">
+              <table id="visitsTable" class="table {{isDeletingVisitView}} tablesorter">
+                <thead>
+                  <tr>
+                    <th>Visit Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each visitsList}}
+                    <tr class="visitLabel">
+                      <td>{{ getVisitLabel }}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+
+            </div>
+            <div class="panel-footer">
+              <div class="row">
+                <div class="col-md-6">
+                  <input id="visitLabelInput" class="form-control" type="text" placeholder="Visit Label" />
+                </div>
+                <div class="col-md-6">
+                  <div id="addVisitToStudyButton" class="btn btn-info">Add Visit to Study</div>
+                  <div id="deleteVisitFromStudyButton" class="btn btn-danger">Delete Visit</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      {{/if}}
+
+
+      <div id="saveStudyButton" class="pull-right btn btn-info">Save Study</div>
+      {{#if notNewStudy }}
+      <div id="deleteStudyButton" class="pull-right btn btn-danger with-right-margin">Delete Study</div>
+      {{/if}}
+    </div>
+  </div>
+</template>

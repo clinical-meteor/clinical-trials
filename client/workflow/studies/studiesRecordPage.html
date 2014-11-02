@@ -1,0 +1,80 @@
+<template name="studiesRecordPage">
+  <div id="studiesRecordPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div class="container">
+      <!--
+      <div class="row">
+        <div class="col col-md-6">
+          <h4>{{name}}</h4>
+          <h6>{{_id}}</h6>
+        </div>
+        <div class="col col-md-6 pull-right">
+          <div id="editStudyButton" class="pull-right btn btn-info">Edit Study</div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-md-12">
+          <label for="studyDescriptionInput" >Study Description</label>
+          <div id="studyDescriptionText">
+            {{description}}
+          </div>
+          <br>
+
+          <label for="studyUrlInput" >Sponsor</label>
+          <div id="studyUrlText">
+            {{sponsor}}
+          </div>
+          <br>
+
+        </div>
+      </div>
+      <hr> -->
+
+      <div class="row">
+        <div class="col col-md-12">
+
+          <!-- <div class="panel tile"> -->
+          <div class="panel tile">
+            <div class="panel-heading heading-primary">
+              {{name}}
+              <div class="pull-right">
+                {{_id}}
+              </div><br>
+              {{sponsor}}
+            </div>
+            <div class="padded panel-image-primary">
+              {{description}}
+            </div>
+            <div class="panel-body">
+              <table id="formsTable" class="table table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>Stared</th>
+                    <th>Form ID</th>
+                    <th>Form Name</th>
+                    <th>Owner</th>
+                    <th># Blocks</th>
+                    <th>Tags</th>
+                    <th>Active</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each formsList}}
+                    {{> formRowItem }}
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-footer">
+              <a id="editStudyButton">Edit Study</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- <hr> -->
+
+    </div>
+  </div>
+</template>

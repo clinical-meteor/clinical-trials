@@ -1,0 +1,113 @@
+
+<template name="formBlockPreview">
+
+  {{#if isSpacer }}
+    <div id="item-{{_id}}-spacer" class="item">
+      <hr>
+    </div>
+  {{/if}}
+
+  {{#if isTextBlock }}
+    <div id="item-{{_id}}-textblock" class="item">
+      <div class="padded">
+        <p id="input-{{_id}}">{{getLabelText}}</p>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isSectionTitle }}
+    <div id="item-{{_id}}" class="item">
+      <hr>
+      <h3>{{getLabelText}}</h3>
+    </div>
+  {{/if}}
+
+  {{#if isInput}}
+    <div id="item-{{_id}}" class="item {{isSelected}}">
+      <label class="blockLabel" for="input-{{_id}}">{{getLabelText}}</label>
+      <div class="padded">
+        <input id="input-{{_id}}" class="form-control" type="{{getInputType}}" placeholder="{{getInputPlaceholder}}" value="{{getInputValue}}">
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isTextarea}}
+    <div id="item-{{_id}}" class="item">
+      <label class="blockLabel" for="input-{{_id}}">{{getLabelText}}</label>
+      <div class="padded">
+        <textarea id="input-{{_id}}" class="form-control" type="{{getInputType}}" placeholder="{{getInputPlaceholder}}">{{getInputValue}}</textarea>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isYesNoBlock}}
+    <div id="item-{{_id}}" class="item {{isSelected}}">
+      <div class="padded row">
+        <div class="col col-md-10">
+          <p class="yesNoText">{{getLabelText}}</p>
+        </div>
+        <div class="col col-md-2">
+          <div class="btn-group pull-right">
+            <button id="item-{{_id}}-yes" type="button" class="btn {{yesNoBlockYesValue}} yes-button" readonly>Yes</button>
+            <button id="item-{{_id}}-no" type="button" class="btn {{yesNoBlockNoValue}} no-button" readonly>No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isDateTimeBlock}}
+    <div id="item-{{_id}}" class="item {{isSelected}} dateTimeBlock">
+      <label class="dateTimeText" for="input-{{_id}}">{{getLabelText}}</label>
+      <div class="padded">
+        <input id="input-{{_id}}" class="form-control" type="date" value="{{getInputValue}}">
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isTimeBlock}}
+    <div id="item-{{_id}}" class="item {{isSelected}} timeBlock">
+      <label class="timeText" for="input-{{_id}}">{{getLabelText}}</label>
+      <div class="padded">
+        <input id="input-{{_id}}" class="form-control" type="time" value="{{getInputValue}}">
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isRadioBlock}}
+    <div id="item-{{_id}}" class="item {{isSelected}} radioBlock">
+      <div class="padded row">
+        <div class="col col-md-6">
+          <p class="radioText">{{getLabelText}}</p>
+        </div>
+        <div class="col col-md-6">
+          <div class="btn-group pull-right">
+            <button id="item-{{_id}}-radio1" type="button" class="btn radio-1-button {{getValueActive1}}" readonly>{{defaultValue1}}</button>
+            <button id="item-{{_id}}-radio2" type="button" class="btn radio-2-button {{getValueActive2}}" readonly>{{defaultValue2}}</button>
+            <button id="item-{{_id}}-radio3" type="button" class="btn radio-3-button {{getValueActive3}}" readonly>{{defaultValue3}}</button>
+            <button id="item-{{_id}}-radio4" type="button" class="btn radio-4-button {{getValueActive4}}" readonly>{{defaultValue4}}</button>
+            <button id="item-{{_id}}-radio5" type="button" class="btn radio-5-button {{getValueActive5}}" readonly>{{defaultValue5}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  {{#if isMultiSelectBlock}}
+    <div id="item-{{_id}}" class="item {{isSelected}} multiSelectBlock">
+      <div class="padded row">
+        <div class="col col-md-6">
+          <p class="radioText">{{getLabelText}}</p>
+        </div>
+        <div class="col col-md-6">
+          <div class="btn-group pull-right">
+            {{#each selectItems}}
+            <button id="item-{{_id}}-multi" type="button" class="btn {{getSelectedActive}} multiselect-button" readonly>{{getSelectItemValue}}</button>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+
+</template>

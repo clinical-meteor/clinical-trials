@@ -1,0 +1,40 @@
+<head>
+  <title>ClinicalTrials</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<template name="appLayout">
+
+  {{> promptModal }}
+  {{> confirmModal }}
+  {{> keybindingsModal }}
+  {{> tutorialModal }}
+  {{> sponsorSearchModal }}
+  {{> formSearchModal }}
+  {{> subjectSearchModal }}
+  {{> selectRoleModal }}
+  {{> removeUserModal }}
+  {{> sponsorSearchModal }}
+
+  <div class="hidden">{{resized}}</div>
+  <div id="appLayout" class="with-navbar-offset">
+    {{> errorPanel }}
+    {{> westPanel }}
+
+    {{> yield region='header' }}
+    {{> inPageAlert }}
+    <div id="mainPanel">
+      {{> yield }}
+    </div>
+    {{> yield region='footer' }}
+  </div>
+</template>
+
+
+<template name="errorPanel">
+  <aside id="errorPanel" class="ui top sidebar alert alert-danger">
+    {{getErrorMessage}}
+  </aside>
+</template>

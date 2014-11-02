@@ -1,0 +1,45 @@
+<template name="userSecurityCard">
+  <div id="userSecurityCard" class="{{securityCardVisible}} panel">
+    <div class="row">
+      <div class="col col-md-12">
+        <h5 id="resetPasswordTitle" class="personal-title">Change Your Password</h5>
+        <h6 id="resetPasswordMessage">Password must be at least 8 characters long.</h6>
+      </div>
+    </div>
+    <hr>
+
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label id="newPasswordLabel" class="col-xs-2 control-label">Password:</label>
+        <div class="col-xs-8">
+          <input id="newPasswordInput" class="form-control" type="password" placeholder="********" value="{{password}}" />
+        </div>
+      </div>
+      <div class="form-group {{isValidated}}">
+        <label id="confirmPasswordLabel" class="col-xs-2 control-label">Confirm:</label>
+        <div class="col-xs-8">
+          <input id="confirmPasswordInput" class="form-control" type="password" placeholder="********" value="{{password}}" />
+        </div>
+      </div>
+      <!-- {{#if passwordIsValid }}
+        <div class="form-group">
+          <label id="updatePasswordLabel" class="col-xs-2 control-label"></label>
+          <div class="col-xs-8">
+            <button id="updatePasswordButton" class="btn btn-info">Update Password</button>
+          </div>
+        </div>
+      {{/if}} -->
+    </form>
+    <br>
+    <div class="extra-padding">
+      {{#if showSuccessMessage}}
+        <div id="resetPasswordSuccessfulMessage" class="fullwidth alert alert-success">
+          Success!  Password updated!
+        </div>
+      {{else}}
+      <button id="updatePasswordButton" class="fullwidth btn btn-info">Update Password</button>
+      {{/if}}
+    </div>
+
+  </div>
+</template>

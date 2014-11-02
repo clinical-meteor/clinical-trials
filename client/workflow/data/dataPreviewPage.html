@@ -1,0 +1,55 @@
+<template name="dataPreviewPage">
+  <div id="dataPreviewPage" class="fullheight padded">
+    <div class="container">
+      <div class="col col-md-12">
+
+      <div class="card panel panel-default">
+        <div class="panel-heading">
+          <i class="fa {{getApprovalIcon}} fa-2x pull-right"></i>
+          <i class="fa {{getLockedIcon}} fa-2x pull-right"></i>
+          <!--TODO add link to trash icon to delte file -->
+          <i class="fa {{getDeleteIcon}} fa-2x pull-right"></i>
+          <h4>{{getFormName}}</h4>
+        </div>
+        <div class="panel-body">
+          {{#each dataSchema}}
+            {{> dataBlockPreview }}
+            {{#if answerHasComments}}
+              <div class="horizontally-padded">
+                <ul class="list-group">
+                  {{#each questionsList}}
+                    <li class="list-group-item">{{text}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
+            {{#if isActiveQuestion }}
+              <div class="horizontally-padded">
+                <div class="row">
+                  <div class="col col-md-9">
+                    <input type="text" class="comment-input form-control" value="">
+                  </div>
+                  <div class="col col-md-3">
+                    <div class="fullwidth resolvedButton btn btn-default">
+                      Resolved
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+        <div class="panel-footer">
+            {{#if isInitialVersion}}
+              <div>{{ _id }} | Created By: {{getCreatedBy}} | Initial Version </div>
+            {{else}}
+              <div>{{ _id }} | Created By: {{getCreatedBy}} | <a id = "previousVersionID" href = "#">Previous Version: </a>{{getPreviousVersion}}</div>
+            {{/if}}
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+</template>

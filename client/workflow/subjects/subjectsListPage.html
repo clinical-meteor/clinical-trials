@@ -1,0 +1,58 @@
+<template name="subjectsListPage">
+  <div id="subjectsListPage" class="page">
+    <div class="container">
+
+        <div class="row">
+          <div class="col col-md-6">
+            <input id="subjectSearchInput" type="text" class="form-control" placeholder="search subjects..." />
+          </div>
+          <div class="col-md-6 pull-right">
+            <button id="createSubjectButton" class="btn btn-info">Create Subject</button>
+          </div>
+        </div>
+      <hr/>
+
+      <table id="tableOfStudyForms" class="table table-hover table-striped tablesorter">
+        <thead>
+          <tr>
+            <th>Study ID</th>
+            <th>Full Name</th>
+            <th>Sponsor</th>
+            <!-- <th>Creator</th> -->
+            <th># Forms</th>
+            <th>Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each subjectsList}}
+            {{> subjectRowItem }}
+          {{/each}}
+        </tbody>
+      </table>
+      <hr>
+
+      <div class="btn-group">
+        {{#each subjectsPaginationButtonList }}
+          {{> subjectsPaginationButton }}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="subjectsPaginationButton">
+  <button id="pagination-btn-{{index}}" class="{{pageActive}} pagination-btn btn btn-default">{{getPage}}</button>
+</template>
+
+<template name="subjectRowItem">
+  <tr class="individualFormRow">
+<!--     <td><i class="fa {{ getStar }}"></i></td> -->
+<!--     <td>{{ createdAt }}</td> -->
+    <td>{{ _id }}</td>
+    <td>{{ name }}</td>
+    <td>{{ sponsor }}</td>
+    <!-- <td>{{ study }}</td> -->
+    <td>{{ numberForms }}</td>
+    <td>{{ isStudyActive }}</td>
+  </tr>
+</template>

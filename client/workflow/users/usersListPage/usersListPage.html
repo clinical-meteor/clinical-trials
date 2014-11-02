@@ -1,0 +1,96 @@
+<template name="usersListPage">
+  <div id="usersListPage" class="page">
+    <div class="container">
+
+        <div class="row">
+          <div class="col col-md-6">
+            <input id="usersSearchInput" type="text" class="form-control" placeholder="search collected users..." />
+          </div>
+          <div class="col-md-6 pull-right">
+            <button id="newUserButton" class="btn btn-info">Create User</button>
+          </div>
+        </div>
+        <hr/>
+
+        <table id="usersTable" class="table table-hover table-striped">
+          <thead>
+          <tr>
+            <th id="usersTableUsernameColumn" class="col-md-2 sortable">
+              Username
+            </th>
+            <th id="usersTableCreatedAtColumn" class="col-md-2 sortable">
+              <span class="line"></span>CreatedAt
+            </th>
+            <th id="usersTableFullNameColumn" class="col-md-2 sortable">
+              <span class="line"></span>Full Name
+            </th>
+            <th id="usersTableRoleColumn" class="col-md-2 sortable">
+              <span class="line"></span>Role
+            </th>
+            <th id="usersTableCompanyColumn" class="col-md-2 sortable">
+              <span class="line"></span>Sponsor
+            </th>
+            <th id="usersTableEmailColumn" class="col-md-2 sortable align-right">
+              <span class="line"></span>Email
+            </th>
+            {{#if isAdmin }}
+              <th id="usersStatusColumn" class="centered">Status</th>
+            {{/if}}
+          </tr>
+          </thead>
+          <tbody>
+
+          {{#each userInList }}
+            {{> userListItem }}
+          {{/each}}
+
+          </tbody>
+        </table>
+
+
+
+        <!-- Users table -->
+        <!-- <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div> -->
+
+      <!-- </div> -->
+    </div>
+  </div>
+</template>
+
+
+
+<template name="userListItem">
+
+  <tr class="first userListItem">
+    <td>
+      <a href="/users/{{ getUserIdString }}" class="name">{{ username }}</a>
+    </td>
+    <td>
+      {{ getCreatedAt }}
+    </td>
+    <td>
+      {{ profile.name }}
+    </td>
+    <td>
+      {{ profile.roles }}
+    </td>
+    <td>
+      {{ profile.sponsor }}
+    </td>
+    <td class="align-right">
+      <a href="#">{{ getEmail }}</a>
+    </td>
+    {{#if isAdmin}}
+      <td class="centered">
+        <div class="userStatusCell label {{getStatusLabelColor}}">
+          {{getStatusLabelText}}
+        </div>
+      </td>
+    {{/if}}
+
+  </tr>
+
+</template>

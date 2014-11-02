@@ -1,0 +1,109 @@
+<template name="userBasicInfoCard">
+  <div id="userBasicInfoCard" class="{{basicInfoCardVisible}} panel">
+    <div class="row">
+      <div class="col col-md-12">
+        <h5 id="userEditPageTitle" class="personal-title">Basic Info</h5>
+        <h6>Lorem ipsum....</h6>
+      </div>
+    </div>
+    <hr>
+
+
+    <form id="userEditForm" class="form-horizontal" role="form">
+
+      <div class="form-group">
+        <label id="profileUsernameLabel" class="col-lg-2 control-label">Username:</label>
+        <div class="col-lg-8">
+          <input id="profileUsernameInput" class="form-control" type="text" value="{{ getUsername }}" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileEmailLabel" class="col-lg-2 control-label">Email:</label>
+        <div class="col-lg-8">
+          <input id="profileEmailInput" class="form-control" type="text" value="{{ getEmail }}" />
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="form-group">
+        <label id="profileNameLabel" class="col-lg-2 control-label">Name:</label>
+        <div class="col-lg-8">
+          <input id="profileNameInput" class="form-control" type="text" placeholder="Jane Doe" value="{{ getName }}" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileTitleLabel" class="col-lg-2 control-label">Title:</label>
+        <div class="col-lg-8">
+          <input id="profileTitleInput" class="form-control" type="text" placeholder="VP Sales" value="{{ getTitle }}" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="findCompanyLabel" class="col-lg-2 control-label">Sponsor:</label>
+        <div class="col col-lg-8">
+          <input id="findSponsorButton" class="form-control" type="text" value="{{ getSponsor }}" />
+        </div>
+        <div class="col-lg-1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="findRoleButtonLabel" class="col-lg-2 control-label">Role:</label>
+        <div class="col-lg-8">
+          <input id="findRoleButton" class="fullwidth btn btn-default" value="{{ getRoles }}" />
+        </div>
+        <div class="col-lg-1">
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label id="profileAvatarLabel" class="col-lg-2 control-label">Avatar:</label>
+        <div class="col-lg-8">
+          <input id="profileAvatarInput" class="form-control" type="text" placeholder="/images/icons/Default_User.png" value="{{ getAvatar }}" />
+        </div>
+      </div>
+
+
+      <hr>
+
+      <div class="form-group">
+        <label id="profilePhoneLabel" for="profilePhoneInput" class="col-md-2 control-label">Phone</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="profilePhoneInput" placeholder="212-555-1234" value="{{ getPhone }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileWebsiteLabel" for="profileWebsiteInput" class="col-md-2 control-label">Website</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="profileWebsiteInput" placeholder="http://www.somewhere.com" value="{{ getWebsite }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileAddressLabel" for="profileAddressInput" class="col-md-2 control-label">Address</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="profileAddressInput" placeholder="123 Main St.  Apt 4" value="{{profile.address}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileCityLabel" for="profileCityInput" class="col-md-2 control-label">City</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="profileCityInput" placeholder="Brooklyn" value="{{profile.city}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileStateLabel" for="profileStateInput" class="col-md-2 control-label">State</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="profileStateInput" placeholder="NY" value="{{profile.state}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="profileZipLabel" for="profileZipInput" class="col-md-2 control-label">Zip</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="profileZipInput" placeholder="11208" value="{{profile.zip}}">
+        </div>
+      </div>
+    </form>
+    <input id="saveBasicInfoButton" type="button" class="fullwidth btn btn-info {{isStaleUserRecord}} primary" value="{{createOrSaveText}}">
+
+  </div>
+</template>

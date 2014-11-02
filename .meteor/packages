@@ -1,0 +1,32 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages
+less
+accounts-password
+accounts-ui
+email
+tinytest
+ui
+session
+
+
+iron:router
+benjaminrh:event-hooks
+mrt:nprogress
+mrt:moment
+mrt:bootstrap-3
+alanning:roles
+awatson1978:mousetrap
+clinical:nightwatch
+awatson1978:bowser
+awatson1978:session-extended-api
+mrt:font-awesome-4-less
+clinical:sidebars
+clinical:ui-semantics
+clinical:template-helpers
+clinical:hipaa-audit-log
+clinical:ui-modals
+

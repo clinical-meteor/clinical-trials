@@ -1,0 +1,65 @@
+<template name="dataListPage">
+  <div id="dataListPage" class="page">
+    <div class="container">
+
+        <div class="row">
+          <div class="col col-md-6">
+            <input id="dataSearchInput" type="text" class="form-control" placeholder="search collected data..." />
+          </div>
+          <div class="centered col col-md-6">
+<!--             <div class="pull-right btn-group">
+              <button id="twentyButton" class="{{isTwentyActive}} btn btn-default">20</button>
+              <button id="fiftyButton" class="{{isFiftyActive}} btn btn-default">50</button>
+              <button id="hundredButton" class="{{isHundredActive}} btn btn-default">100</button>
+            </div> -->
+          </div>
+        </div>
+      <hr/>
+
+      <table id="dataTable" class="table table-hover table-striped tablesorter">
+        <thead>
+          <tr>
+            <!-- <th>Data ID</th> -->
+            <th>Created At</th>
+            <th>Study/Form Name</th>
+            <th>Subject Name</th>
+            <th class="centered">Comments</th>
+            <th class="centered">Approved</th>
+            <th class="centered">Locked</th>
+            <th>Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each dataList }}
+            {{> dataRowItem }}
+          {{/each}}
+        </tbody>
+      </table>
+      <hr>
+
+      <div class="btn-group">
+        {{#each dataPaginationButtonList }}
+          {{> dataPaginationButton }}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="dataPaginationButton">
+  <button id="data-pagination-btn-{{index}}" class="{{pageActive}} pagination-btn btn btn-default">{{getPage}}</button>
+</template>
+
+<template name="dataRowItem">
+  <tr class="dataRow">
+    <!-- <td>{{ _id }}</td> -->
+    <!-- <td>{{ schema_id }}</td> -->
+    <td>{{ getCreatedAt }}</td>
+    <td>{{ formName }}</td>
+    <td>{{ getSubjectName }}</td>
+    <td class="centered"><i class="fa {{ getCommentsIcon }}"></i></td>
+    <td class="centered"><i class="fa {{ getApprovalIcon }}"></i></td>
+    <td class="centered"><i class="fa {{ getLockedIcon }}"></i></td>
+    <td>{{ active }}</td>
+  </tr>
+</template>

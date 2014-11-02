@@ -1,0 +1,29 @@
+<!-- set up the modal to start hidden and fade in and out -->
+<template name="studySearchModal">
+  <div id="studySearchModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Select Study</h4>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="studySearchModalInput" class="fullwidth form-control" placeholder="search..." value="{{getSearchTerm}}">
+          <ul class="list-group">
+            {{#each studysList}}
+              {{> studySearchModalItem}}
+            {{/each}}
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button id="modalOkButton" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="studySearchModalItem">
+  <li class="list-group-item" data-dismiss="modal">
+    {{name}}
+  </li>
+</template>

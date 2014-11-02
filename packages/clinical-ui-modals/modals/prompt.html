@@ -1,0 +1,20 @@
+<!-- set up the modal to start hidden and fade in and out -->
+<template name="promptModal">
+  <div id="promptModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>{{getPromptTitle}}</h4>
+        </div>
+        <div class="modal-body">
+          {{getPromptMessage}}
+        </div>
+        <!-- dialog buttons -->
+        <div class="modal-footer">
+          <button id="modalOkButton" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

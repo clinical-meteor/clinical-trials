@@ -1,0 +1,31 @@
+<template name="sponsorsEditPage">
+  <div id="sponsorsEditPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div class="container">
+
+      <div class="row">
+        <div class="col col-md-12">
+          <h4>Sponsor Configuration</h4>
+          <br>
+        </div>
+        <div class="col col-md-12">
+          <label for="sponsorNameInput" >Name</label>
+          <input id="sponsorNameInput" type="text" class="form-control" placeholder="..." value="{{name}}">
+          <br>
+
+          <label for="sponsorDescriptionInput" >Description</label>
+          <input id="sponsorDescriptionInput" type="text" class="form-control" placeholder="..." value="{{description}}">
+          <br>
+
+          <label for="sponsorUrlInput" >URL</label>
+          <input id="sponsorUrlInput" type="text" class="form-control" placeholder="..." value="{{url}}">
+          <br>
+
+        </div>
+      </div>
+      <hr>
+      <div id="saveSponsorButton" class="pull-right btn btn-info">Save Sponsor</div>
+
+    </div>
+  </div>
+</template>

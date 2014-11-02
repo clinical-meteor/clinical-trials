@@ -1,0 +1,26 @@
+<!-- set up the modal to start hidden and fade in and out -->
+<template name="keybindingsModal">
+  <div id="keybindingsModal" class="modal fade">
+    <div class="modal-dialog" data-dismiss="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Keybindings!</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Supporting the following keyboard events:  </h4>
+          <ul>
+            <li><strong>shift + e</strong> - error panel</li>
+            <li><strong>shift + m</strong> - menu</li>
+            <li><strong>shift + s</strong> - sidebar</li>
+            <li><strong>shift + p</strong> - prompt</li>
+            <li><strong>shift + c</strong> - confirm</li>
+            <li><strong>shift + k</strong> - keybindings</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button id="modalOkButton" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

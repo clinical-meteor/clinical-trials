@@ -1,0 +1,105 @@
+
+<template name="westPanel">
+  <aside id="westPanel" class="padded ui sidebar with-sidebar-offset">
+
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li id="addNewFieldTab" class="{{addNewFieldTabActive}}"><a href="#addNewFieldPanel">Add new field</a></li>
+      <li id="editFieldTab" class="{{editFieldTabActive}}"><a href="#editFieldPanel">Edit field</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <!-- <div class="tab-content"> -->
+      {{#if isAddNewFieldTab }}
+        <div class="tab-pane" id="addNewFieldPanel">
+          <ul class="list-group">
+            <li id="plainTextBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="plainTextBlock">Text Block</label>
+            </li>
+            <li id="textInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="textInputBlock">Text Question</label>
+            </li>
+            <li id="textareaInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="textareaInputBlock">Textarea Question</label>
+            </li>
+            <li id="numericInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="numericInputBlock">Numeric Value</label>
+            </li>
+            <li id="spacerBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="spacerBlock">Spacer</label>
+            </li>
+            <li id="sectionTitleBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="sectionTitleBlock">Section Title</label>
+            </li>
+            <li id="yesNoInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="yesNoInputBlock">Yes/No Question</label>
+            </li>
+            <li id="dateTimeInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="dateTimeInputBlock">Date Question</label>
+            </li>
+            <li id="timeInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="timeInputBlock">Time Question</label>
+            </li>
+            <li id="radioInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="radioInputBlock">Radio Question</label>
+            </li>
+            <li id="multiSelectInputBlock" class="dragDropBlock list-group-item">
+              <label class="smallgray" for="multiSelectInputBlock">MultiSelect</label>
+            </li>
+          </ul>
+        </div>
+      {{else}}
+        <div class="tab-pane" id="editFieldPanel">
+          {{#with selectedFormBlock}}
+            <ul class="list-group">
+              <li class="list-group-item">
+                  <label class="smallgray" for="questionInput">Default Text</label>
+                  <textarea id="questionInput" class="form-control" rows="10" type="text" placeholder="Q:  How many asprins do you take a day?">{{getQuestionText}}</textarea>
+              </li>
+              {{#if hasDefaultValue}}
+                <li class="list-group-item">
+                    <label class="smallgray" for="defaultValueInput">Default Value</label>
+                    <input id="defaultValueInput" class="form-control" type="text" placeholder="..." value="{{getDefaultValue}}">
+                </li>
+              {{/if}}
+              {{#if hasRadioValue}}
+                <li class="list-group-item">
+                    <label class="smallgray">Radio-Values</label>
+                    <input id="defaultValueInput1" class="form-control" type="text" placeholder="Value 1" value="{{getValue1}}">
+                    <input id="defaultValueInput2" class="form-control" type="text" placeholder="Value 2" value="{{getValue2}}">
+                    <input id="defaultValueInput3" class="form-control" type="text" placeholder="Value 3" value="{{getValue3}}">
+                    <input id="defaultValueInput4" class="form-control" type="text" placeholder="Value 4" value="{{getValue4}}">
+                    <input id="defaultValueInput5" class="form-control" type="text" placeholder="Value 5" value="{{getValue5}}">
+
+                </li>
+              {{/if}}
+              {{#if hasMultipleValues}}
+                <li class="list-group-item">
+                    <label class="smallgray">Multi-Select</label>
+                    {{#each selectItems}}
+                      <input id="multiselect-{{getMultiSelectId}}" class="form-control multiselectInput" type="text" placeholder="..." value="{{getMultiSelectValue}}"><span class="multiselectRemove btn btn-danger">-</span>
+                    {{/each}}
+                    <br>
+                    <div id="addSelectItemButton" class="btn btn-info"><i class="fa fa-plus"></i></div>
+                </li>
+              {{/if}}
+
+
+              <li class="list-group-item">
+                  <label class="smallgray" for="defaultValueInput">Order</label>
+                  <input id="orderInput" class="form-control" type="text" placeholder="..." value="{{rank}}" readonly>
+              </li>
+            </ul>
+            <button id="saveFormBlockParamsButton" class="fullwidth btn btn-info with-bottom-margin">Save</button>
+            {{#if hasMultipleValues}}
+              <button id="duplicateFormBlockButton" class="fullwidth btn btn-info with-bottom-margin">Duplicate</button>
+            {{/if}}
+            <button id="deleteBlockButton" class="fullwidth btn btn-danger">Delete</button>
+          {{/with}}
+        </div>
+      {{/if}}
+    <!-- </div> -->
+
+  </aside>
+</template>

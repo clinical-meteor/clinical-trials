@@ -1,0 +1,18 @@
+<template name="builderPage">
+  <div id="builderPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div id="sortableListPanel">
+      <div class="col col-md-12">
+        <input id="formTitleInput" type="text" class="form-control" placeholder="Sample Form Name...." value="{{formName}}">
+      </div>
+      <div id="list" class="col col-md-12">
+        {{#each items}}
+          {{> formBlock }}
+        {{/each}}
+      </div>
+    </div>
+    <div id="sortableDropZone" class="centered dragdropzone">
+        <h2>drop here!</h2>
+    </div>
+  </div>
+</template>

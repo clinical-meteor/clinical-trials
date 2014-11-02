@@ -1,0 +1,113 @@
+#landingPage{
+  #hero {
+    background: #4B4848;
+    background-size: cover;
+    background-image: url("/images/landing/hero/flu-shot.jpg");
+    //background-image: url("http://24.media.tumblr.com/899355a7363be380170ecfcbdc9744d7/tumblr_myp93odkni1st5lhmo1_1280.jpg");
+    background-position: center center;
+    height: 650px;
+    position: relative;
+    //top: -60px;
+    padding-top: 115px;
+
+    .container {
+      position: relative;
+      z-index: 33;
+      //top: 400px
+    }
+    h1.hero-text {
+      text-align: center;
+      font-family: "Roboto";
+      font-size: 38px;
+      font-weight: 300;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+      @media (max-width: 767px) {
+        #hero h1.hero-text {
+          font-size: 30px;
+        }
+      }
+    .sub-text {
+      -webkit-font-smoothing: antialiased;
+      -webkit-animation-delay: 0.6s;
+      -moz-animation-delay: 0.6s;
+      -o-animation-delay: 0.6s;
+      -ms-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+      margin: 0 auto;
+      margin-top: 25px;
+      text-align: center;
+      color: #fff;
+      font-weight: 400;
+      font-size: 17px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      width: 50%;
+    }
+    @media (max-width: 991px) {
+    .sub-text {
+      width: 70%;
+      }
+    }
+    @media (max-width: 767px) {
+      .sub-text {
+        font-size: 15px;
+      }
+    }
+    .cta {
+      -webkit-animation-delay: 0.6s;
+      -moz-animation-delay: 0.6s;
+      -o-animation-delay: 0.6s;
+      -ms-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+      text-align: center;
+      margin-top: 60px;
+      a {
+        margin: 0px 20px;
+      }
+    }
+    @media (max-width: 767px) {
+      .cta a {
+        font-size: 14px;
+        padding: 12px 25px;
+        margin: 0px 15px 15px 0px; } }
+    .browsers {
+      margin-top: 70px;
+      text-align: center;
+      img {
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 767px) {
+      .browsers {
+        margin-top: 65px;
+        }
+      }
+  }
+  @media (max-width: 991px) {
+    #hero {
+      padding-top: 100px;
+      }
+    }
+  @media (max-width: 767px) {
+    #hero {
+      height: 550px;
+      }
+    }
+  #hero:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 420px;
+    //background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.05) 26%, rgba(0, 0, 0, 0.55) 71%, black 100%);
+  }
+  #hero:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 13, 32, 0.35); }
+}

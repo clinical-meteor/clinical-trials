@@ -1,0 +1,141 @@
+#usersListPage, #subjectsListPage{
+  tr{
+    cursor: pointer;
+  }
+  .row {
+    // margin-right: 0px;
+    // margin-left: 0px;
+    .col-md-12{
+      padding-left: 0px;
+    }
+  }
+}
+
+#usersListPage{
+  .userListItem:hover{
+    cursor: pointer;
+  }
+  .userListItem td{
+    vertical-align: middle !important;
+  }
+
+  .avatar{
+    height: 64px !important;
+    width: 64px !important;
+    border: 3px solid darkgray;
+    max-width: none !important;
+  }
+  .users-list {
+    .header {
+      h3 {
+        margin-top: 0px;
+      }
+      input.search {
+        padding: 5px 6px;
+        position: relative;
+        top: 0px;
+        &:focus {
+          box-shadow: none;
+          border: 1px solid #888;
+        }
+      }
+      .ui-select {
+        margin: 3px 40px 0 0;
+      }
+      .ui-dropdown {
+        margin-left: 20px;
+        input.form-control {
+          width: 60px;
+          display: inline-block;
+          height: 28px;
+          margin: 0px 8px;
+        }
+      }
+      a.btn-flat span {
+        font-size: 17px;
+        position: relative;
+        top: 2px;
+        margin-right: 4px;
+      }
+    }
+    .table {
+      td {
+        vertical-align: middle;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      img.avatar {
+        float: left;
+        margin-right: 14px;
+        max-width: 45px;
+        position: relative;
+      }
+      a.name {
+        color: #3389d1;
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 20px 0 0 0;
+      }
+      .subtext {
+        font-size: 12px;
+        margin-left: 0;
+        color: #778391;
+        font-style: italic;
+        margin-top: 0;
+      }
+    }
+    .pagination {
+      margin-top: 25px;
+    }
+  }
+
+
+
+  /* responsive */
+
+  @media (max-width: 767px) {
+    .ui-dropdown .dialog .body{
+      width: 250px;
+      left: 58%;
+      position: relative;
+    }
+    .users-list {
+      .table {
+        a.name {
+          font-size: 12px;
+        }
+        td {
+          font-size: 12px;
+        }
+        .avatar {
+          display: none;
+        }
+      }
+      h3 {
+        display: block;
+        float: none;
+        margin-bottom: 30px;
+      }
+      .header {
+        input.search {
+          margin-bottom: 18px;
+        }
+        .ui-dropdown {
+          float: left;
+          margin-left: 0;
+        }
+      }
+    }
+
+    .ui-dropdown .dialog .body .form input[type="text"]{
+      margin-top: 10px;
+    }
+    .ui-dropdown .dialog .body .form a{
+      margin-top: 10px;
+      margin-left: 18px;
+    }
+  }
+
+
+}

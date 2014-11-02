@@ -1,0 +1,150 @@
+<template name="homePage">
+  <div id="homePage" class="page">
+    <div class="container">
+
+      <div class="row">
+        <div class="col col-md-6">
+          <div id="activeStudiesTile" class="panel tile">
+            <div class="panel-heading heading-primary">
+              Active Studies
+            </div>
+            <div class="panel-body primary-color">
+              <ul>
+                {{#each studiesList}}
+                  <li><a class="activeStudy" href="/study/home/{{_id}}">{{ name }}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-6">
+
+          <div class="row">
+            <div class="col col-xs-4">
+              <div id="formBuilderTile" class="panel tile">
+                <div class="panel-heading heading-primary">
+                  Design
+                </div>
+                <div class="panel-image">
+                    <img id="formBuilderTileImage" src="/images/home/formbuilder.png" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-xs-4">
+              <div id="savedFormsTile" class="panel tile">
+                <div class="panel-heading heading-primary">
+                  Forms
+                </div>
+                <div class="panel-image">
+                    <img id="savedFormsTileImage" src="/images/home/forms-square.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col col-xs-4">
+              <div id="collectedDataTile" class="panel tile">
+                <div class="panel-heading heading-primary">
+                  Data
+                </div>
+                <div class="panel-image">
+                    <img id="collectedDataTileImage" src="/images/home/wordcloud.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col col-xs-4">
+              <div id="studiesTile" class="panel tile">
+                <div class="panel-heading heading-primary">
+                  Studies
+                </div>
+                <div class="panel-image">
+                    <img id="studiesTileImage" src="/images/home/clinical-studies.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+            <div class="col col-xs-4">
+              <div id="sponsorsTile" class="panel panel-default tile">
+                <div class="panel-heading">
+                  Sponsors
+                </div>
+                <div class="panel-image">
+                    <img id="sponsorsTileImage" src="/images/home/sponsors.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-xs-4">
+              <div id="usersTile" class="panel panel-default tile">
+                <div class="panel-heading">
+                  Users
+                </div>
+                <div class="panel-image">
+                    <img id="usersTileImage" src="/images/home/users.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-xs-4">
+              <div id="subjectsTile" class="panel panel-default tile">
+                <div class="panel-heading">
+                  Subjects
+                </div>
+                <div class="panel-image">
+                    <img id="subjectsTileImage" src="/images/home/subjects.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-xs-4">
+              <div id="commentsTile" class="panel panel-default tile">
+                <div class="panel-heading">
+                  Comments
+                </div>
+                <div class="panel-image">
+                    <img id="auditTileImage" src="/images/home/comments.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-xs-4">
+              <div id="auditTile" class="panel panel-default tile">
+                <div class="panel-heading">
+                  Audit
+                </div>
+                <div class="panel-image">
+                    <img id="auditTileImage" src="/images/home/audit.jpg" class="panel-image-preview" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- <div id="activeStudiesTile" class="panel tile">
+            <div class="panel-heading heading-primary">
+              Inactive Studies
+            </div>
+            <div class="panel-body">
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+
+
+
+      <div class="row">
+        <div id="zoomInstructions">
+          Click &#x2318;+ to zoom in and &#x2318;- to zoom out.<br>
+          Shift+K to list keyboard shortcuts.
+          </div>
+      </div>
+    </div>
+  </div>
+</template>
