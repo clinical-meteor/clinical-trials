@@ -1,59 +1,88 @@
-
+getYieldTemplates = function() {
+  if (Meteor.userId()) {
+    return {
+      'navbarHeader': {
+        to: 'header'
+      },
+      'navbarFooter': {
+        to: 'footer'
+      },
+      'sidebar': {
+        to: 'westPanel'
+      }
+      //'sidebarTemplate': {to: 'aside'}
+    };
+  } else {
+    return {
+      'navbarHeader': {
+        to: 'header'
+      },
+      'navbarFooter': {
+        to: 'footer'
+      },
+      'sidebar': {
+        to: 'westPanel'
+      }
+      //'sidebarTemplate': {to: 'aside'}
+    };
+    //return {};
+  }
+};
 
 
 //--------------------------------------------------------------
 // Accounts Entry Routes
 
-Router.map(function() {
-  this.route("entrySignUpRoute", {
-    path: "/sign-up",
-    template: "entrySignUpPage",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      Session.set('entryError', void 0);
-      setPageTitle("Sign Up");
-    }
-  });
-  this.route("entrySignInRoute", {
-    path: "/sign-in",
-    template: "entrySignInPage",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      Session.set('entryError', void 0);
-      setPageTitle("Sign In");
-    }
-  });
-
-  this.route("entryForgotPasswordRoute", {
-    path: "/forgot-password",
-    template: "entryForgotPassword",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      setPageTitle("Forgot Password");
-      return Session.set('entryError', void 0);
-    }
-  });
-  this.route('entrySignOutRoute', {
-    path: '/sign-out',
-    template: "entrySignOut",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      Session.set('entryError', void 0);
-      Meteor.logout();
-      Router.go('/');
-    }
-  });
-  this.route('entryResetPasswordRoute', {
-    path: 'reset-password/:resetToken',
-    template: "entryResetPassword",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      Session.set('entryError', void 0);
-      setPageTitle("Reset Password");
-      return Session.set('resetToken', this.params.resetToken);
-    }
-  });
-});
+// Router.map(function() {
+//   this.route("entrySignUpRoute", {
+//     path: "/sign-up",
+//     template: "entrySignUpPage",
+//     yieldTemplates: getYieldTemplates(),
+//     onBeforeAction: function() {
+//       Session.set('entryError', void 0);
+//       setPageTitle("Sign Up");
+//     }
+//   });
+//   this.route("entrySignInRoute", {
+//     path: "/sign-in",
+//     template: "entrySignInPage",
+//     yieldTemplates: getYieldTemplates(),
+//     onBeforeAction: function() {
+//       Session.set('entryError', void 0);
+//       setPageTitle("Sign In");
+//     }
+//   });
+//
+//   this.route("entryForgotPasswordRoute", {
+//     path: "/forgot-password",
+//     template: "entryForgotPassword",
+//     yieldTemplates: getYieldTemplates(),
+//     onBeforeAction: function() {
+//       setPageTitle("Forgot Password");
+//       return Session.set('entryError', void 0);
+//     }
+//   });
+//   this.route('entrySignOutRoute', {
+//     path: '/sign-out',
+//     template: "entrySignOut",
+//     yieldTemplates: getYieldTemplates(),
+//     onBeforeAction: function() {
+//       Session.set('entryError', void 0);
+//       Meteor.logout();
+//       Router.go('/');
+//     }
+//   });
+//   this.route('entryResetPasswordRoute', {
+//     path: 'reset-password/:resetToken',
+//     template: "entryResetPassword",
+//     yieldTemplates: getYieldTemplates(),
+//     onBeforeAction: function() {
+//       Session.set('entryError', void 0);
+//       setPageTitle("Reset Password");
+//       return Session.set('resetToken', this.params.resetToken);
+//     }
+//   });
+// });
 
 
 //--------------------------------------------------------------
@@ -64,29 +93,29 @@ Router.map(function() {
     path: "/notsupported",
     template: "browserNotSupportedPage",
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
+    onAfterAction: function() {
       Session.set('entryError', void 0);
       setPageTitle("Browser Not Supported");
     }
   });
-  this.route("pageNotFoundRoute", {
-    path: "/notfound",
-    template: "notFoundPage",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      Session.set('entryError', void 0);
-      setPageTitle("Not Found Page");
-    }
-  });
-  this.route("loadingPageRoute", {
-    path: "/loading",
-    template: "loadingPage",
-    yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      Session.set('entryError', void 0);
-      setPageTitle("Loading");
-    }
-  });
+  // this.route("pageNotFoundRoute", {
+  //   path: "/notfound",
+  //   template: "notFoundPage",
+  //   yieldTemplates: getYieldTemplates(),
+  //   onBeforeAction: function() {
+  //     Session.set('entryError', void 0);
+  //     setPageTitle("Not Found Page");
+  //   }
+  // });
+  // this.route("loadingPageRoute", {
+  //   path: "/loading",
+  //   template: "loadingPage",
+  //   yieldTemplates: getYieldTemplates(),
+  //   onBeforeAction: function() {
+  //     Session.set('entryError', void 0);
+  //     setPageTitle("Loading");
+  //   }
+  // });
 
 });
 
@@ -100,10 +129,12 @@ renderHomePage = function(scope){
   if (Meteor.userId()) {
     scope.render("homePage");
     scope.render("navbarHeader", {to: 'header'});
+    scope.render("sidebar", {to: 'westPanel'});
     //scope.render("sidebarTemplate",{to: 'aside'});
   }else{
     scope.render("landingPage");
     scope.render("navbarHeader", {to: 'header'});
+    scope.render("sidebar", {to: 'westPanel'});
     //scope.render("sidebarTemplate",{to: 'aside'});
   }
 };
@@ -115,9 +146,6 @@ Router.map(function() {
     path: '/',
     template:'homePage',
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
-      console.log('routing to: /');
-    },
     onAfterAction: function(){
       renderHomePage(this);
       setPageTitle("Landing Page");
@@ -132,7 +160,7 @@ Router.map(function() {
     path: '/dashboard',
     template: "homePage",
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
+    onAfterAction: function() {
       console.log('routing to: /dashboard');
       setPageTitle("Welcome");
     }
@@ -141,7 +169,7 @@ Router.map(function() {
     path: '/eula',
     template: 'eulaPage',
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
+    onAfterAction: function() {
       setPageTitle("End User License Agreement");
     }
   });
@@ -149,7 +177,7 @@ Router.map(function() {
     path: '/privacy',
     template: 'privacyPage',
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
+    onAfterAction: function() {
       setPageTitle("Privacy Policy");
     }
   });
@@ -157,7 +185,7 @@ Router.map(function() {
     path: '/glossary',
     template: 'glossaryPage',
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
+    onAfterAction: function() {
       setPageTitle("Glossary");
     }
   });
@@ -165,7 +193,7 @@ Router.map(function() {
     path: '/about',
     template: 'aboutPage',
     yieldTemplates: getYieldTemplates(),
-    onBeforeAction: function() {
+    onAfterAction: function() {
       setPageTitle("About");
     }
   });

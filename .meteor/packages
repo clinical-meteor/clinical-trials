@@ -3,30 +3,45 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+
+
 standard-app-packages
 less
-accounts-password
-accounts-ui
 email
 tinytest
 ui
 session
 
+meteor-platform
 
-iron:router
-benjaminrh:event-hooks
+accounts-base
+accounts-password
+accounts-ui
+
 mrt:nprogress
-mrt:moment
-mrt:bootstrap-3
-alanning:roles
-awatson1978:mousetrap
-clinical:nightwatch
-awatson1978:bowser
-awatson1978:session-extended-api
-mrt:font-awesome-4-less
-clinical:sidebars
+momentjs:moment
+benjaminrh:event-hooks
+
+clinical:roles
+clinical:keybindings
+clinical:extended-api
+clinical:fonts
+clinical:router
+
 clinical:ui-semantics
-clinical:template-helpers
-clinical:hipaa-audit-log
+#clinical:hipaa-audit-log
+#clinical:template-helpers
 clinical:ui-modals
 
+awatson1978:bowser
+awatson1978:mousetrap
+
+#clinical:sidebars
+#clinical:theming-ui
+clinical:theming@0.4.9
+clinical:active-layout
+clinical:active-layout-reset
+clinical:error-pages
+clinical:active-entry
+
+nemo64:bootstrap

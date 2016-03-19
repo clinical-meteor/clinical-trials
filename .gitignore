@@ -1,2 +1,10 @@
-/docs/
-/packages/clinical-ui-hipaa-log
+
+
+screenshots
+screenshots/*
+logs
+logs/*
+reports
+reports/*
+
+settings.json

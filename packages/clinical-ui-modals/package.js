@@ -13,17 +13,17 @@ Package.onUse(function(api) {
   api.use('templating');
   api.use('session');
 
-  api.addFiles('modals/confirm.html', "client");
-  api.addFiles('modals/confirm.js', "client");
-  api.addFiles('modals/confirm.less', "client");
+  // api.addFiles('modals/confirm.html', "client");
+  // api.addFiles('modals/confirm.js', "client");
+  // api.addFiles('modals/confirm.less', "client");
 
-  api.addFiles('modals/keybindings.html', "client");
-  api.addFiles('modals/keybindings.js', "client");
-  api.addFiles('modals/keybindings.less', "client");
+  // api.addFiles('modals/keybindings.html', "client");
+  // api.addFiles('modals/keybindings.js', "client");
+  // api.addFiles('modals/keybindings.less', "client");
 
-  api.addFiles('modals/prompt.html', "client");
-  api.addFiles('modals/prompt.js', "client");
-  api.addFiles('modals/prompt.less', "client");
+  // api.addFiles('modals/prompt.html', "client");
+  // api.addFiles('modals/prompt.js', "client");
+  // api.addFiles('modals/prompt.less', "client");
 
   api.addFiles('modals/removeUser.html', "client");
   api.addFiles('modals/removeUser.js', "client");

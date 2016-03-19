@@ -3,13 +3,11 @@ Router.map(function(){
   this.route('commentsRecordPage', {
     path: '/comments/:id',
     template: 'commentsRecordPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', this.params.id);
-    },
     onWait: function(){
       return Meteor.subscribe('comments');
     },
     data: function () {
+      Session.set('currentForm', this.params.id);
       return Comments.findOne({_id: this.params.id});
     },
   });

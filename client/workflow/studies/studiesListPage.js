@@ -24,9 +24,6 @@ Router.map(function(){
         to: 'footer'
       }
     },
-    onBeforeAction: function() {
-      setPageTitle("Studies");
-    },
     waitOn: function(){
       return Meteor.subscribe('studies');
     }

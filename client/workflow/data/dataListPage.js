@@ -20,9 +20,6 @@ Router.map(function(){
         to: 'footer'
       }
     },
-    onBeforeAction: function() {
-      setPageTitle("Data Entry");
-    },
     waitOn: function(){
       return Meteor.subscribe('data');
     }

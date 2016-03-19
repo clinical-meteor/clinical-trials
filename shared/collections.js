@@ -1,4 +1,4 @@
-Data =  new Meteor.Collection("data");
+Data =  new Meteor.Collection("TrialsData");
 Data.allow({
   insert: function(){
     return true;
@@ -11,7 +11,7 @@ Data.allow({
   }
 });
 
-Forms =  new Meteor.Collection("forms");
+Forms =  new Meteor.Collection("TrialsForms");
 Forms.allow({
   insert: function(){
     return true;
@@ -25,7 +25,7 @@ Forms.allow({
 });
 
 
-Studies =  new Meteor.Collection("studies");
+Studies =  new Meteor.Collection("TrialsStudies");
 Studies.allow({
   insert: function(){
     return true;
@@ -38,7 +38,7 @@ Studies.allow({
   }
 });
 
-Sponsors =  new Meteor.Collection("sponsors");
+Sponsors =  new Meteor.Collection("TrialsSponsors");
 Sponsors.allow({
   insert: function(){
     return true;
@@ -51,7 +51,7 @@ Sponsors.allow({
   }
 });
 
-Subjects =  new Meteor.Collection("subjects");
+Subjects =  new Meteor.Collection("TrialsSubjects");
 Subjects.allow({
   insert: function(){
     return true;
@@ -64,7 +64,7 @@ Subjects.allow({
   }
 });
 
-Comments =  new Meteor.Collection("comments");
+Comments =  new Meteor.Collection("TrialsComments");
 Comments.allow({
   insert: function(){
     return true;
@@ -79,7 +79,7 @@ Comments.allow({
 
 
 // TODO:  refactor Items to FormItems
-Items = new Meteor.Collection("items");
+Items = new Meteor.Collection("TrialsItems");
 Items.allow({
   update: function(){
     return true;

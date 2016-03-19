@@ -6,24 +6,18 @@ Session.setDefault('isDeletingFormFromComment', false);
 Router.map(function(){
   this.route('newCommentRoute', {
     path: '/new/comment',
-    template: 'commentsEditPage',
-    onBeforeAction: function(){
-      setPageTitle("New Comment");
-    }
+    template: 'commentsEditPage'
   });
 
 
-  this.route('subjectsEditRoute', {
+  this.route('commentsEditRoute', {
     path: '/edit/comment/:id',
     template: 'commentsEditPage',
-    onBeforeAction: function(){
-      setPageTitle("Edit Comment");
-      Session.set('selectedCommentId', this.params.id);
-    },
     waitOn: function(){
       return Meteor.subscribe('subjects');
     },
     data: function () {
+      Session.set('selectedCommentId', this.params.id);
       return Comments.findOne({_id: this.params.id });
     }
   });

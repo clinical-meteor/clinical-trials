@@ -3,10 +3,8 @@ Router.map(function(){
   this.route('studiesRecordPage', {
     path: '/studies/:id',
     template: 'studiesRecordPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', this.params.id);
-    },
     data: function () {
+      Session.set('currentForm', this.params.id);
       console.log('routing to: ', this.params.id);
       return Studies.findOne({_id: this.params.id});
     },

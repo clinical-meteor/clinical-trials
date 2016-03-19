@@ -12,9 +12,6 @@ Router.map(function(){
   this.route('sponsorsListRoute', {
     path: '/sponsors',
     template: 'sponsorsListPage',
-    onBeforeAction: function(){
-      setPageTitle("Sponsors");
-    },
     waitOn: function(){
       Meteor.subscribe('settings');
       return Meteor.subscribe('sponsors');

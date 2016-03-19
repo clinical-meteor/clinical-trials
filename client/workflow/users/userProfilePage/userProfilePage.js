@@ -2,16 +2,13 @@ Router.map(function(){
   this.route('userProfileRoute', {
     path: '/users/:id',
     template: 'userProfilePage',
-    onBeforeAction: function(){
-      setPageTitle("User");
-      Session.set('selectedUser', this.params.id);
-    },
     waitOn: function(){
       //Meteor.subscribe('settings');
       //return Meteor.subscribe('userProfile', this.params.id);
       return Meteor.subscribe('usersDirectory');
     },
     data: function () {
+      Session.set('selectedUser', this.params.id);
       return Meteor.users.findOne({_id: this.params.id});
     },
     onAfterAction: function() {

@@ -4,9 +4,6 @@ Router.map(function(){
   this.route('sponsorRecordRoute', {
     path: '/sponsor/:id',
     template: 'sponsorsRecordPage',
-    onBeforeAction: function(){
-      setPageTitle("Sponsors");
-    },
     waitOn: function(){
       Meteor.subscribe('settings');
       return Meteor.subscribe('sponsors');

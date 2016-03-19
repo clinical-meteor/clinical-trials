@@ -1,12 +1,9 @@
 Session.setDefault('selectedBlockItem', false);
 
 Router.map(function(){
-  this.route('builderPage', {
+  this.route('builderRouteWithId', {
     path: '/builder/:id',
     template: 'builderPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', this.params.id);
-    },
     waitOn: function(){
       return Meteor.subscribe('forms');
     },
@@ -14,15 +11,13 @@ Router.map(function(){
       return Forms.findOne({_id: this.params.id});
     },
     onAfterAction:function(){
+      Session.set('currentForm', this.params.id);
       showSidebars();
     }
   });
   this.route('builderPage', {
     path: '/builder',
     template: 'builderPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', false);
-    },
     waitOn: function(){
       return Meteor.subscribe('forms');
     },
@@ -30,6 +25,7 @@ Router.map(function(){
       return {};
     },
     onAfterAction:function(){
+      Session.set('currentForm', false);
       showWestPanel();
     }
   });

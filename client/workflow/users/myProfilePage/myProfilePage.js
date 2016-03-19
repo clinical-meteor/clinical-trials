@@ -8,9 +8,6 @@ Router.map(function(){
   this.route('myProfileRoute', {
     path: '/myprofile',
     template: 'myProfilePage',
-    onBeforeAction: function(){
-      setPageTitle("Your Profile");
-    },
     onAfterAction: function() {
       Session.set('isOnListPage', false);
     }

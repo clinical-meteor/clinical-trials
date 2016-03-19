@@ -21,15 +21,13 @@ Router.map(function(){
   this.route('editProfileRoute', {
     path: '/user/edit/:id',
     template: 'userEditPage',
-    onBeforeAction: function(){
-      Session.set('selectedUser', this.params.id);
-    },
     waitOn: function(){
       return Meteor.subscribe('userDirectory');
       //return Meteor.subscribe('userProfile');
     },
     data: function () {
       //console.log('this.params.id',this.params.id);
+      Session.set('selectedUser', this.params.id);
       return Meteor.users.findOne({_id: this.params.id});
     },
     onAfterAction:function(){
@@ -40,10 +38,6 @@ Router.map(function(){
   this.route('newUserRoute', {
     path: '/user/new',
     template: 'userEditPage',
-    onBeforeAction: function(){
-      setPageTitle("New User");
-      Session.set('defaultUserProfileCard', 'basicInfoCard');
-    },
     waitOn: function(){
       return Meteor.subscribe('userDirectory');
     },
@@ -51,6 +45,7 @@ Router.map(function(){
       return {};
     },
     onAfterAction: function() {
+      Session.set('defaultUserProfileCard', 'basicInfoCard');
       Session.set('isOnListPage', false);
       Session.set('selectedSponsor', false);
       Session.set('selectedRole', false);

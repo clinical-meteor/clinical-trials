@@ -4,11 +4,9 @@ Router.map(function(){
   this.route('dataPreviewPage', {
     path: '/data/:id',
     template: 'dataPreviewPage',
-    onBeforeAction: function(){
-      Session.set('currentDataRecord', this.params.id);
-    },
     data: function () {
       console.log('routing to: /data/', this.params.id);
+      Session.set('currentDataRecord', this.params.id);
       Session.set('selectedDataRecord', this.params.id);
       var record = Data.findOne({_id: this.params.id});
       if(record){

@@ -12,9 +12,6 @@ Router.map(function(){
   this.route('usersListRoute', {
     path: '/users',
     template: 'usersListPage',
-    onBeforeAction: function(){
-      setPageTitle("Users List");
-    },
     waitOn: function(){
       Meteor.subscribe('settings');
       return Meteor.subscribe('usersDirectory');

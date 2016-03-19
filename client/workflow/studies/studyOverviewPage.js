@@ -4,10 +4,8 @@ Router.map(function(){
   this.route('studyOverviewPage', {
     path: '/study/home/:id',
     template: 'studyOverviewPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', this.params.id);
-    },
     data: function () {
+      Session.set('currentForm', this.params.id);
       console.log('routing to: ', this.params.id);
       return Studies.findOne({_id: this.params.id});
     },

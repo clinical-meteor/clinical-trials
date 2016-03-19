@@ -24,9 +24,6 @@ Router.map(function(){
         to: 'footer'
       }
     },
-    onBeforeAction: function() {
-      setPageTitle("Forms");
-    },
     waitOn: function(){
       return Meteor.subscribe('forms');
     }

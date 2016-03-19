@@ -3,13 +3,11 @@ Router.map(function(){
   this.route('subjectsRecordPage', {
     path: '/subjects/:id',
     template: 'subjectsRecordPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', this.params.id);
-    },
     onWait: function(){
       return Meteor.subscribe('subjects');
     },
     data: function () {
+      Session.set('currentForm', this.params.id);
       return Subjects.findOne({_id: this.params.id});
     },
   });

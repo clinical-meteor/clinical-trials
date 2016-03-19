@@ -1,0 +1,114 @@
+
+#sidebar {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+
+  .fa-plus{
+    left: 10px;
+    top: 15px;
+    position: absolute;
+  }
+  .sidebarMenuItem{
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 0;
+    display: block;
+    line-height: 1.5em;
+    padding: .75em 2em;
+    position: relative;
+    color: white;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .sidebarMenuItem:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .sidebarMenuContents {
+    a {
+      color: white;
+      box-shadow: rgba(255,255,255,.15) 0 1px 0 0;
+      display: block;
+      line-height: 1.5em;
+      padding: .75em 2em;
+      position: relative;
+    }
+
+    .count-list {
+      background: rgba(255,255,255,.1);
+      border-radius: 1em;
+      float: right;
+      font-size: .7rem;
+      line-height: 1;
+      margin-top: .25rem;
+      margin-right: -1.5em;
+      padding: .3em .5em;
+    }
+
+    // .listItem {
+    //   &:hover,
+    //   &:active,
+    //   &.active {
+    //     .count-list { background: #831d2c }
+    //   }
+    // }
+  }
+}
+
+
+
+
+// desktop
+@media only screen and (min-width: 960px) {
+
+}
+
+// landscape orientation
+@media only screen and (min-width: 960px) {
+  #sidebar{
+
+    padding-right: 10px;
+    padding-top: 50px;
+
+    .panel{
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    }
+    .panel-default{
+      border-color: #ddd;
+    }
+
+  }
+}
+
+// portrait orientation
+@media only screen and (max-width: 960px) {
+  #sidebar{
+    .panel{
+      margin-bottom: 20px;
+      background-color: inherit;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+
+      a{
+        color: white;
+      }
+    }
+
+    .panel-default{
+      border-color: none;
+    }
+
+  }
+}

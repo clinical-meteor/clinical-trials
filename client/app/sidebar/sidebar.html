@@ -1,0 +1,47 @@
+<template name="sidebar">
+  <section id="sidebar" class="sidebarMenu">
+
+    <div id="sidebarMenuContents" class="sidebarMenuContents">
+
+        <div id="usernameLink" class="sidebarMenuItem withLowerBorder">{{getUsername}}</div>
+        <div id="homeLink" class="sidebarMenuItem">Home</div>
+
+        <!-- {{#if currentUser}}
+          <div class="withLowerBorder">
+
+            <div id="newListButton" class="sidebarMenuItem">New List<i class="fa fa-plus"></i></div>
+
+            <div id="lists">
+              {{#each lists}}
+                <a href="{{pathFor 'checklistPage'}}" class="listItem {{activeListClass}}" title="{{name}}">
+                  {{#if userId}}
+                    <i class="fa fa-lock"></i>
+                  {{/if}}
+                  {{name}}
+                  {{#if incompleteCount}}
+                    <span class="count-list">{{incompleteCount}}</span>
+                  {{/if}}
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        {{/if}}
+        <a id="usersButton" href="/list/users">Users</a>
+        <a id="myProfileButton" href="/myprofile" class="withLowerBorder">My Profile</a>
+
+        <a id="aboutButton" href="/about">About</a>
+        <a id="featuresButton" href="{{pathFor 'marketingPage'}}">Features</a>
+        <a id="eulaButton" href="{{pathFor 'eulaRoute'}}">End User Agreement</a>
+        <a id="privacyButton" href="{{pathFor 'privacyPage'}}" class="withLowerBorder">Privacy Policy</a> -->
+        {{#if currentUser}}
+          <a id="logoutButton" class="withLowerBorder">Logout</a>
+        {{/if}}
+
+        <div id="connectionStatusPanel" class="centered">
+          {{getConnectionStatus}}
+        </div>
+
+
+    </div>
+  </section>
+</template>

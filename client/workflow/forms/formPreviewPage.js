@@ -3,10 +3,8 @@ Router.map(function(){
   this.route('formPreviewPage', {
     path: '/form/:id',
     template: 'formPreviewPage',
-    onBeforeAction: function(){
-      Session.set('currentForm', this.params.id);
-    },
     data: function () {
+      Session.set('currentForm', this.params.id);
       console.log('routing to: ', this.params.id);
       return Forms.findOne({_id: this.params.id});
     },

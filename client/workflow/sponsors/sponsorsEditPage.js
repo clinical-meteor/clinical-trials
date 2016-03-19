@@ -4,19 +4,13 @@ Session.setDefault('selectedSponsorId', false);
 Router.map(function(){
   this.route('newSponsorRoute', {
     path: '/newsponsor',
-    template: 'sponsorsEditPage',
-    onBeforeAction: function(){
-      setPageTitle("New Sponsor");
-    }
+    template: 'sponsorsEditPage'
   });
 
 
   this.route('sponsorsEditRoute', {
     path: '/editsponsor/:id',
     template: 'sponsorsEditPage',
-    onBeforeAction: function(){
-      setPageTitle("Edit Sponsor");
-    },
     waitOn: function(){
       return Meteor.subscribe('sponsors');
     },

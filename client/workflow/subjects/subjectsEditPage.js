@@ -14,7 +14,7 @@ Router.map(function(){
 
 
   this.route('subjectsEditRoute', {
-    path: '/edit/study/:id',
+    path: '/edit/subject/:id',
     template: 'subjectsEditPage',
     onBeforeAction: function(){
       setPageTitle("Edit Subject");

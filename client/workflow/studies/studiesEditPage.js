@@ -6,24 +6,18 @@ Session.setDefault('isDeletingFormFromStudy', false);
 Router.map(function(){
   this.route('newStudyRoute', {
     path: '/new/study',
-    template: 'studiesEditPage',
-    onBeforeAction: function(){
-      setPageTitle("New Study");
-    }
+    template: 'studiesEditPage'
   });
 
 
   this.route('studiesEditRoute', {
     path: '/edit/study/:id',
     template: 'studiesEditPage',
-    onBeforeAction: function(){
-      setPageTitle("Edit Study");
-      Session.set('selectedStudyId', this.params.id);
-    },
     waitOn: function(){
       return Meteor.subscribe('studies');
     },
     data: function () {
+      Session.set('selectedStudyId', this.params.id);
       return Studies.findOne({_id: this.params.id });
     }
   });
