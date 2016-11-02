@@ -73,8 +73,8 @@ If you want to get FDA certified, you'll need to address the requirements in [Ti
 ============================
 #### Other Resources
 
-https://clinicaltrials.gov/
-https://api.molecularmatch.com
+https://clinicaltrials.gov/  
+https://api.molecularmatch.com  
 
 
 ------------------------
