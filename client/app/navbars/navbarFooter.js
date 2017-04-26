@@ -1,7 +1,7 @@
 Template.navbarFooter.helpers({
   buildControls: function(){
     if(Router.current()){
-      if(Router.current().path.indexOf('builder') > 0){
+      if(Router.current().url.includes('builder')){
         return true;
       }else{
         return false;
@@ -12,7 +12,7 @@ Template.navbarFooter.helpers({
   },
   formControls: function(){
     if(Router.current()){
-      if(Router.current().path.indexOf('form/') > 0){
+      if(Router.current().url.includes('form/')){
         return true;
       }else{
         return false;
@@ -23,7 +23,7 @@ Template.navbarFooter.helpers({
   },
   userControls: function(){
     if(Router.current()){
-      if(Router.current().path.indexOf('user/') > 0){
+      if(Router.current().url.includes('user/')){
         return true;
       }else{
         return false;
@@ -34,7 +34,7 @@ Template.navbarFooter.helpers({
   },
   sponsorControls: function(){
     if(Router.current()){
-      if(Router.current().path.indexOf('sponsor/') > 0){
+      if(Router.current().url.includes('sponsor/')){
         return true;
       }else{
         return false;
@@ -45,7 +45,7 @@ Template.navbarFooter.helpers({
   },
   dataControls: function(){
     if(Router.current()){
-      if(Router.current().path.indexOf('data/') > 0){
+      if(Router.current().url.includes('data/')){
         return true;
       }else{
         return false;

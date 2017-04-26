@@ -20,10 +20,10 @@ UI.body.resized = function(){
 //     showWestPanel();
 //   }
 // }
-// showWestPanel = function(){
-//   $('body').addClass('leftSidebar');
-//   $('#westPanel').addClass('active');
-// }
+showWestPanel = function(){
+  $('body').addClass('leftSidebar');
+  $('#westPanel').addClass('active');
+}
 // hideWestPanel = function(){
 //   $('body').removeClass('leftSidebar');
 //   $('#westPanel').removeClass('active');

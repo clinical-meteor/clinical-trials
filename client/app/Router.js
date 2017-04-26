@@ -14,8 +14,13 @@ Router.configure({
   loadingTemplate: 'appLoading',
 
   yieldTemplates: {
-
-    'defaultNavbarFooter': {
+    'sidebar': {
+      to: 'westPanel'
+    },
+    'navbarHeader': {
+      to: 'header'
+    },
+    'navbarFooter': {
       to: 'footer'
     },
     'reactiveOverlaysTemplate': {
