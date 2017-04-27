@@ -6,9 +6,8 @@
 
 
 standard-app-packages
-less
+less@2.7.8
 email
-tinytest
 ui
 session
 
@@ -37,11 +36,12 @@ awatson1978:bowser
 awatson1978:mousetrap
 
 #clinical:sidebars
-#clinical:theming-ui
+clinical:theming-ui
 clinical:theming@0.4.9
 clinical:active-layout
 clinical:active-layout-reset
 clinical:error-pages
 clinical:active-entry
+clinical:form-builder
 
 nemo64:bootstrap

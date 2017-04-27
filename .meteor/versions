@@ -24,6 +24,7 @@ clinical:base-model@1.3.1
 clinical:error-pages@0.1.1
 clinical:extended-api@2.2.3
 clinical:fonts@1.0.0
+clinical:form-builder@0.1.4
 clinical:glass-ui@1.3.11
 clinical:keybindings@1.3.0
 clinical:modals@1.0.7
