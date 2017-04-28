@@ -9,6 +9,7 @@ Router.map(function(){
     template: 'subjectsEditPage',
     onBeforeAction: function(){
       setPageTitle("New Subject");
+      this.next()
     }
   });
 
@@ -19,6 +20,7 @@ Router.map(function(){
     onBeforeAction: function(){
       setPageTitle("Edit Subject");
       Session.set('selectedSubjectId', this.params.id);
+      this.next()
     },
     waitOn: function(){
       return Meteor.subscribe('subjects');

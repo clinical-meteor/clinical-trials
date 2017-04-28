@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Modal dialogs for ClinicalFramework based apps",
-  version: "0.1.0",
+  version: "0.1.3",
   name: "clinical:ui-modals",
   git: "http://github.com/awatson1978/clinical-ui-modals.git"
 });
@@ -12,6 +12,7 @@ Package.onUse(function(api) {
   api.use('mrt:bootstrap-3');
   api.use('templating');
   api.use('session');
+  api.use('grove:less@0.1.1');
 
   // api.addFiles('modals/confirm.html', "client");
   // api.addFiles('modals/confirm.js', "client");
