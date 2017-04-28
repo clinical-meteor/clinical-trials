@@ -29,7 +29,7 @@
     "alerts"               : false,
     "progress-bars"        : false,
     "media"                : false,
-    "list-group"           : false,
+    "list-group"           : true,
     "panels"               : false,
     "responsive-embed"     : false,
     "wells"                : false,

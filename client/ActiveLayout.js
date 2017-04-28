@@ -37,12 +37,11 @@ Meteor.startup(function (){
       showSidebar: true,
       showSearchbar: false,
       symmatricalPadding: false,
-      useEastFence: false,
       useHorizontalFences: false,
       useVerticalFences: true,
       useHierarchicalLayout: false,
       useCardLayout: false,
-      useEastFence: true,
+      useEastFence: false,
       wideCard: true
     }
   });

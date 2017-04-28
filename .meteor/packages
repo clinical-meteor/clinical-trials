@@ -6,7 +6,7 @@
 
 
 standard-app-packages
-less@2.7.8
+less
 email
 ui
 session
@@ -28,7 +28,7 @@ clinical:fonts
 clinical:router
 
 clinical:ui-semantics
-#clinical:hipaa-audit-log
+clinical:hipaa-audit-log
 #clinical:template-helpers
 clinical:ui-modals
 
@@ -43,5 +43,9 @@ clinical:active-layout-reset
 clinical:error-pages
 clinical:active-entry
 clinical:form-builder
+#clinical:active-users
+clinical:users-picklist
+
+clinical:hl7-resource-questionnaire
 
 nemo64:bootstrap

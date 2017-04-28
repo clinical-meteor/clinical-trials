@@ -23,7 +23,7 @@ UI.registerHelper('isAdmin', function() {
   // TODO:  set user role permissions on data publications so it doesnt matter if they spoof it or not
 
   if(Meteor.user()){
-    if(Meteor.user().profile){
+    if(Meteor.user().profile && Meteor.user().profile.roles){
       // these comparisons should be soft comparisons with == rather than ===
       // because we're comparing strings to array values, and there is a cast involved
       if((Meteor.user().profile.roles[0] == "Admin") || (Meteor.user().profile.roles[0] == "SysAdmin")){
