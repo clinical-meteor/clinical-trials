@@ -26,9 +26,6 @@ Router.configure({
     'reactiveOverlaysTemplate': {
       to: 'overlays'
     },
-    'sidebar': {
-      to: 'westPanel'
-    },
     'globalSearchBar': {
       to: 'globalInput'
     },

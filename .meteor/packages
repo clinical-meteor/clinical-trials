@@ -43,6 +43,7 @@ clinical:active-entry
 clinical:form-builder
 #clinical:active-users
 clinical:users-picklist
+clinical:modals
 
 clinical:hl7-resource-questionnaire
 

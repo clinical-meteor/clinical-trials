@@ -19,7 +19,7 @@ Meteor.startup(function (){
       south: 0,
       east: 270,
       west: 270,
-      maxPageWidth: 1024
+      maxPageWidth: 2048
     },
     defaults: {
       appSurfaceOffset: false,

@@ -32,7 +32,6 @@ Router.map(function(){
 });
 
 
-
 //------------------------------------------------
 // EVENTS
 
@@ -54,8 +53,6 @@ Template.subjectsEditPage.events({
     //alert('add! ' + this._id);
     console.log('addingFormToSubject ' + this._id);
 
-    $('#formSearchModal').modal("show");
-
     $('#formSearchModal').on('hidden.bs.modal', function (e) {
       console.log('selectedFormId', Session.get('selectedFormId'));
       //var form = Session.get('selectedForm');
@@ -66,6 +63,8 @@ Template.subjectsEditPage.events({
       }
       Session.set('selectedFormId', null);
     });
+
+    $('#formSearchModal').modal("show");
     Session.set('isDeletingFormFromSubject', false);
   },
   'click #deleteSubjectButton':function(){

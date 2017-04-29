@@ -68,19 +68,21 @@ Template.studiesEditPage.events({
     var self = this;
     //alert('add! ' + this._id);
     console.log('addingFormToStudy ' + this._id);
+    Session.set('selectedStudyId', self._id);
+    Session.set('showFormSearch', true);
 
-    $('#formSearchModal').modal("show");
+    // $('#formSearchModal').modal("show");
 
-    $('#formSearchModal').on('hidden.bs.modal', function (e) {
-      console.log('selectedFormId', Session.get('selectedFormId'));
-      //var form = Session.get('selectedForm');
-      if(self._id){
-        console.log(Studies.update({_id: self._id}, {$addToSet:{
-            forms: Session.get('selectedFormId')
-        }}));
-      }
-      Session.set('selectedFormId', null);
-    });
+    // $('#formSearchModal').on('hidden.bs.modal', function (e) {
+    //   console.log('selectedFormId', Session.get('selectedFormId'));
+    //   //var form = Session.get('selectedForm');
+    //   if(self._id){
+    //     Studies.update({_id: self._id}, {$addToSet:{
+    //       forms: Session.get('selectedFormId')
+    //     }});
+    //   }
+    //   Session.set('selectedFormId', null);
+    // });
     Session.set('isDeletingFormFromStudy', false);
   },
   'click #deleteStudyButton':function(){

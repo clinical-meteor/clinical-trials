@@ -1,8 +1,18 @@
 Session.setDefault('formSearchFilter', '');
 Session.setDefault('selectedFormId', null);
+Session.setDefault('showFormSearch', false);
 
 
 Template.formSearchModal.helpers({
+  showFormSearch: function(){
+    if(Session.get('showFormSearch')){
+      Overlay.show();
+      return "opacity: 1; display: 'visible';";
+    } else {
+      Overlay.hide();
+      return "opacity: 0; display: 'none';";
+    }
+  },
   formList: function(){
     return Forms.find();
   },
@@ -26,5 +36,11 @@ Template.formSearchModal.events({
   },
   'keyup #formSearchModalInput':function(){
     Session.set('formSearchFilter', $('#formSearchModalInput').val());
+  },
+  'click #modalOkButton': function(){
+    Session.set('showFormSearch', false);
+    Studies.update({_id: Session.get('selectedStudyId')}, {$addToSet:{
+      forms: Session.get('selectedFormId')
+    }});
   }
 });
