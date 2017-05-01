@@ -46,6 +46,9 @@ clinical:users-picklist
 clinical:modals
 
 clinical:hl7-resource-questionnaire
+clinical:hl7-resource-questionnaire-response
+clinical:hl7-resource-research-subject
+clinical:hl7-resource-research-study
 
 nemo64:bootstrap
 meteor-base

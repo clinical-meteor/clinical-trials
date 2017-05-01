@@ -7,8 +7,8 @@
 Template.formBlockPreview.helpers({
   getLabelText: function(){
     var resultString = "";
-    if(this.labelText){
-        return resultString + this.labelText;
+    if(this.schemaTemplate && this.schemaTemplate.label){
+        return resultString + this.schemaTemplate.label;
     }else{
         return resultString;
     }

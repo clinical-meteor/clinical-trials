@@ -11,18 +11,18 @@ Data.allow({
   }
 });
 
-Forms =  new Meteor.Collection("TrialsForms");
-Forms.allow({
-  insert: function(){
-    return true;
-  },
-  update: function () {
-    return true;
-  },
-  remove: function(){
-    return true;
-  }
-});
+// Forms =  new Meteor.Collection("TrialsForms");
+// Forms.allow({
+//   insert: function(){
+//     return true;
+//   },
+//   update: function () {
+//     return true;
+//   },
+//   remove: function(){
+//     return true;
+//   }
+// });
 
 
 Studies =  new Meteor.Collection("TrialsStudies");
@@ -78,19 +78,19 @@ Comments.allow({
 });
 
 
-// TODO:  refactor Items to FormItems
-Items = new Meteor.Collection("TrialsItems");
-Items.allow({
-  update: function(){
-    return true;
-  },
-  insert: function(){
-    return true;
-  },
-  remove: function(){
-    return true;
-  }
-})
+// // TODO:  refactor Items to FormItems
+// Items = new Meteor.Collection("TrialsItems");
+// Items.allow({
+//   update: function(){
+//     return true;
+//   },
+//   insert: function(){
+//     return true;
+//   },
+//   remove: function(){
+//     return true;
+//   }
+// })
 
 
 

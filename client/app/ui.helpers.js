@@ -93,7 +93,7 @@ UI.registerHelper('getLockedIcon', function(){
 //===================================================
 
 UI.registerHelper('isTextBlock', function(){
-  if(this.elementType === "plaintext"){
+  if(['text', 'plaintext'].includes(this.elementType)){
     return true;
   }else{
     return false;

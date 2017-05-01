@@ -7,10 +7,10 @@ Template.formSearchModal.helpers({
   showFormSearch: function(){
     if(Session.get('showFormSearch')){
       Overlay.show();
-      return "opacity: 1; display: 'visible';";
+      return "opacity: 1; display: visible;";
     } else {
       Overlay.hide();
-      return "opacity: 0; display: 'none';";
+      return "opacity: 0; display: none;";
     }
   },
   formList: function(){

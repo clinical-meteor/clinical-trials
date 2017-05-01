@@ -56,8 +56,10 @@ Template.formPreviewPage.events({
 
 Template.formPreviewPage.helpers({
   formSchema: function(){
-    console.log('form.schema', this.schema);
+    console.log('form.schema', Session.get('currentForm'));
+
     var form = Forms.findOne(Session.get('currentForm'));
+    console.log('form', form);
     if(form){
       return form.schema;
     }else{

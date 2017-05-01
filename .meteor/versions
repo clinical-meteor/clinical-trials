@@ -31,12 +31,16 @@ clinical:base-model@1.3.5
 clinical:error-pages@0.2.0
 clinical:extended-api@2.3.0
 clinical:fonts@1.1.6
-clinical:form-builder@0.1.8
+clinical:form-builder@0.1.9
 clinical:glass-ui@1.3.12
 clinical:hipaa-audit-log@2.4.3
 clinical:hipaa-logger@1.0.1
+clinical:hl7-resource-bundle@1.3.14
 clinical:hl7-resource-datatypes@3.0.1
-clinical:hl7-resource-questionnaire@1.3.3
+clinical:hl7-resource-questionnaire@1.3.4
+clinical:hl7-resource-questionnaire-response@1.2.2
+clinical:hl7-resource-research-study@3.0.11
+clinical:hl7-resource-research-subject@3.0.11
 clinical:keybindings@1.4.2
 clinical:modals@1.0.8
 clinical:roles@2.5.0
@@ -48,7 +52,7 @@ clinical:theming@0.4.10
 clinical:theming-ui@0.3.1
 clinical:ui-modals@0.1.3
 clinical:ui-semantics@1.0.0
-clinical:user-model@1.4.9
+clinical:user-model@1.5.0
 clinical:users-picklist@1.0.7
 coffeescript@1.0.17
 ddp@1.2.5

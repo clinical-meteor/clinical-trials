@@ -150,8 +150,47 @@ Template.navbarFooter.events({
 
   // TODO refactor #saveFormLink to #saveBuilderLink
   'click #saveFormLink':function(){
-    console.log('click #saveFormLink', this);
-    saveForm(this);
+    console.log('click #saveFormLink');
+
+      var blockItems = Items.find({},{sort: {rank: 1}}).fetch();
+      console.log("Saving  Schema: ", JSON.stringify(blockItems));
+
+
+      var newForm = {
+        createdAt: new Date(),
+        stared: false,
+        active: true,
+        formName: $('#formTitleInput').val(),
+        owner: Meteor.userId(),
+        ownerUsername: Meteor.user().username,
+        schema: blockItems,
+        numBlocks: blockItems.length
+      };
+      console.log('newForm', newForm);
+      
+      if(Session.get('currentForm')){
+        Forms.update({_id: Session.get('currentForm')},{$set:{
+          formName: newForm.formName,
+          owner: newForm.owner,
+          ownerUsername: newForm.ownerUsername,
+          schema: Items.find({},{sort: {rank: 1}}).fetch(),
+          numBlocks: newForm.numBlocks
+        }}, function(error){
+          if(error) console.log('Forms.update()[error]', error)
+        });
+      }else{
+        Forms.insert(newForm, function(error, result){
+          if(error){
+            console.log('Forms.insert()[error]', error)
+            HipaaLogger.logEvent("error", Meteor.userId(), "Forms", null, error, null, null);
+          }
+          if(result){
+            console.log('Forms.insert()[result]', result)
+            HipaaLogger.logEvent("create", Meteor.userId(), "Forms", result, null, null, null);
+          }
+        });
+      }
+      Router.go('/forms');
   },
   // TODO refactor #clearFormLink to #clearBuilderLink
   'click #clearFormLink':function(){
@@ -188,6 +227,10 @@ Template.navbarFooter.events({
     var record = Forms.findOne({_id: Session.get('currentForm')});
     var previousRecord = Session.get('currentDataRecord');
 
+    console.log('currentForm', record);
+    console.log('currentDataRecord', previousRecord);
+
+
     var newDataRecord = {
       active: true,
       createdAt: new Date(),
@@ -199,6 +242,10 @@ Template.navbarFooter.events({
       previousVersion : previousRecord,
       data: {}
     }
+
+    console.log('newDataRecord', newDataRecord);
+
+    
     for (var i = 0; i < record.schema.length; i++) {
       var block = record.schema[i];
 
@@ -216,11 +263,15 @@ Template.navbarFooter.events({
         }
       }
     }
+    console.log('newDataRecord', newDataRecord);
+
     Data.insert(newDataRecord, function(error, result){
       if(error){
+        console.log('Data.insert[error]', error);
         HipaaLogger.logEvent("error", Meteor.userId(), "Data", null, error, null, null);
       }
       if(result){
+        console.log('Data.insert[result]', result);
         HipaaLogger.logEvent("create", Meteor.userId(), "Data", result, null, Session.get('selectedSubject')._id, Session.get('selectedSubject').name);
       }
     });
@@ -264,40 +315,4 @@ Template.navbarFooter.events({
 
 });
 
-// TODO: move to global helper object
-saveForm = function(scope){
-  var blockItems = Items.find({},{sort: {rank: 1}}).fetch();
-  console.log("Saving  Schema: ", JSON.stringify(blockItems));
-  console.log('_id', scope._id);
 
-
-  var newForm = {
-    createdAt: new Date(),
-    stared: false,
-    active: true,
-    formName: $('#formTitleInput').val(),
-    owner: Meteor.userId(),
-    ownerUsername: Meteor.user().username,
-    schema: blockItems,
-    numBlocks: blockItems.length
-  };
-  if(Session.get('currentForm')){
-    Forms.update({_id: Session.get('currentForm')},{$set:{
-      formName: newForm.formName,
-      owner: newForm.owner,
-      ownerUsername: newForm.ownerUsername,
-      schema: Items.find({},{sort: {rank: 1}}).fetch(),
-      numBlocks: newForm.numBlocks
-    }});
-  }else{
-    Forms.insert(newForm, function(error, result){
-      if(error){
-        HipaaLogger.logEvent("error", Meteor.userId(), "Forms", null, error, null, null);
-      }
-      if(result){
-        HipaaLogger.logEvent("create", Meteor.userId(), "Forms", result, null, null, null);
-      }
-    });
-  }
-  Router.go('/forms');
-}
